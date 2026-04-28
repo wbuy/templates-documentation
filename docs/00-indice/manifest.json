@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Mapa da documentacao",
+    "path": "00-indice/sidebar.md",
+    "order": 1,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Taxonomia de tipos de documentos",
+    "path": "00-indice/taxonomia-documentacao.md",
+    "order": 2,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  }
+]
