@@ -1,0 +1,248 @@
+[
+  {
+    "title": "Visao geral do objeto store",
+    "path": "04-store/visao-geral-store.md",
+    "order": 1,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "detect.isMobile()",
+    "path": "04-store/detect-ismobile.md",
+    "order": 2,
+    "source_url": "https://doc-templates.wbuy.com.br/post/recursos-gerais/"
+  },
+  {
+    "title": "Listeners readListener",
+    "path": "04-store/listeners-readlistener.md",
+    "order": 3,
+    "source_url": "https://doc-templates.wbuy.com.br/post/recursos-gerais/"
+  },
+  {
+    "title": "Recursos gerais",
+    "path": "04-store/recursos-gerais.md",
+    "order": 4,
+    "source_url": "https://doc-templates.wbuy.com.br/post/recursos-gerais/"
+  },
+  {
+    "title": "Array global",
+    "path": "04-store/array-global.md",
+    "order": 5,
+    "source_url": "https://doc-templates.wbuy.com.br/post/array-global/"
+  },
+  {
+    "title": "blogPosts",
+    "path": "04-store/blogposts.md",
+    "order": 6,
+    "source_url": "https://doc-templates.wbuy.com.br/post/blogposts/"
+  },
+  {
+    "title": "cart",
+    "path": "04-store/cart.md",
+    "order": 7,
+    "source_url": "https://doc-templates.wbuy.com.br/post/cart/"
+  },
+  {
+    "title": "customerProfiles",
+    "path": "04-store/customerprofiles.md",
+    "order": 8,
+    "source_url": "https://doc-templates.wbuy.com.br/post/customerprofiles/"
+  },
+  {
+    "title": "featuredIcon",
+    "path": "04-store/featuredicon.md",
+    "order": 9,
+    "source_url": "https://doc-templates.wbuy.com.br/post/featuredicon/"
+  },
+  {
+    "title": "footerText",
+    "path": "04-store/footertext.md",
+    "order": 10,
+    "source_url": "https://doc-templates.wbuy.com.br/post/footertext/"
+  },
+  {
+    "title": "Formularios dinamicos",
+    "path": "04-store/formularios-dinamicos.md",
+    "order": 11,
+    "source_url": "https://doc-templates.wbuy.com.br/post/formularios-dinamicos/"
+  },
+  {
+    "title": "getBrands",
+    "path": "04-store/getbrands.md",
+    "order": 12,
+    "source_url": "https://doc-templates.wbuy.com.br/post/getbrands/"
+  },
+  {
+    "title": "getCommentsProduct",
+    "path": "04-store/getcommentsproduct.md",
+    "order": 13,
+    "source_url": "https://doc-templates.wbuy.com.br/post/getcommentsproduct/"
+  },
+  {
+    "title": "getDynamicPages",
+    "path": "04-store/getdynamicpages.md",
+    "order": 14,
+    "source_url": "https://doc-templates.wbuy.com.br/post/getdynamicpages/"
+  },
+  {
+    "title": "getFiliaisMultiloja",
+    "path": "04-store/getfiliaismultiloja.md",
+    "order": 15,
+    "source_url": "https://doc-templates.wbuy.com.br/post/getfiliaismultiloja/"
+  },
+  {
+    "title": "getInfoPages",
+    "path": "04-store/getinfopages.md",
+    "order": 16,
+    "source_url": "https://doc-templates.wbuy.com.br/post/getinfopages/"
+  },
+  {
+    "title": "getRatings",
+    "path": "04-store/getratings.md",
+    "order": 17,
+    "source_url": "https://doc-templates.wbuy.com.br/post/getratings/"
+  },
+  {
+    "title": "getStoreData",
+    "path": "04-store/getstoredata.md",
+    "order": 18,
+    "source_url": "https://doc-templates.wbuy.com.br/post/getstoredata/"
+  },
+  {
+    "title": "getURLCheckoutTemp",
+    "path": "04-store/geturlcheckouttemp.md",
+    "order": 19,
+    "source_url": "https://doc-templates.wbuy.com.br/post/geturlcheckouttemp/"
+  },
+  {
+    "title": "mainBanner",
+    "path": "04-store/mainbanner.md",
+    "order": 20,
+    "source_url": "https://doc-templates.wbuy.com.br/post/mainbanner/"
+  },
+  {
+    "title": "pageProducts",
+    "path": "04-store/pageproducts.md",
+    "order": 21,
+    "source_url": "https://doc-templates.wbuy.com.br/post/pageproducts/"
+  },
+  {
+    "title": "paymentBrand",
+    "path": "04-store/paymentbrand.md",
+    "order": 22,
+    "source_url": "https://doc-templates.wbuy.com.br/post/paymentbrand/"
+  },
+  {
+    "title": "productBoxDefault",
+    "path": "04-store/productboxdefault.md",
+    "order": 23,
+    "source_url": "https://doc-templates.wbuy.com.br/post/productboxdefault/"
+  },
+  {
+    "title": "productKit",
+    "path": "04-store/productkit.md",
+    "order": 24,
+    "source_url": "https://doc-templates.wbuy.com.br/post/productkit/"
+  },
+  {
+    "title": "productToBox",
+    "path": "04-store/producttobox.md",
+    "order": 25,
+    "source_url": "https://doc-templates.wbuy.com.br/post/producttobox/"
+  },
+  {
+    "title": "publicityBanner",
+    "path": "04-store/publicitybanner.md",
+    "order": 26,
+    "source_url": "https://doc-templates.wbuy.com.br/post/publicitybanner/"
+  },
+  {
+    "title": "securitySeal",
+    "path": "04-store/securityseal.md",
+    "order": 27,
+    "source_url": "https://doc-templates.wbuy.com.br/post/securityseal/"
+  },
+  {
+    "title": "showcaseProduct",
+    "path": "04-store/showcaseproduct.md",
+    "order": 28,
+    "source_url": "https://doc-templates.wbuy.com.br/post/showcaseproduct/"
+  },
+  {
+    "title": "socialIcons",
+    "path": "04-store/socialicons.md",
+    "order": 29,
+    "source_url": "https://doc-templates.wbuy.com.br/post/socialicons/"
+  },
+  {
+    "title": "store.categories()",
+    "path": "04-store/store-categories.md",
+    "order": 30,
+    "source_url": "https://doc-templates.wbuy.com.br/post/store-categories/"
+  },
+  {
+    "title": "store.categoriesMenu()",
+    "path": "04-store/store-categoriesmenu.md",
+    "order": 31,
+    "source_url": "https://doc-templates.wbuy.com.br/post/store-categoriesmenu/"
+  },
+  {
+    "title": "store.getTextTop()",
+    "path": "04-store/store-gettexttop.md",
+    "order": 32,
+    "source_url": "https://doc-templates.wbuy.com.br/post/store-gettexttop/"
+  },
+  {
+    "title": "store.periodicOffers()",
+    "path": "04-store/store-periodicoffers.md",
+    "order": 33,
+    "source_url": "https://doc-templates.wbuy.com.br/post/store-periodicoffers/"
+  },
+  {
+    "title": "store.productDetail()",
+    "path": "04-store/store-productdetail.md",
+    "order": 34,
+    "source_url": "https://doc-templates.wbuy.com.br/post/store-productdetail/"
+  },
+  {
+    "title": "store.widgetInstagram()",
+    "path": "04-store/store-widgetinstagram.md",
+    "order": 35,
+    "source_url": "https://doc-templates.wbuy.com.br/post/store-widgetinstagram/"
+  },
+  {
+    "title": "store.widgetNews()",
+    "path": "04-store/store-widgetnews.md",
+    "order": 36,
+    "source_url": "https://doc-templates.wbuy.com.br/post/store-widgetnews/"
+  },
+  {
+    "title": "userStore",
+    "path": "04-store/userstore.md",
+    "order": 37,
+    "source_url": "https://doc-templates.wbuy.com.br/post/userstore/"
+  },
+  {
+    "title": "widgetFacebook",
+    "path": "04-store/widgetfacebook.md",
+    "order": 38,
+    "source_url": "https://doc-templates.wbuy.com.br/post/widgetfacebook/"
+  },
+  {
+    "title": "geral.hasOpolen",
+    "path": "04-store/geral-hasopolen.md",
+    "order": 39,
+    "source_url": "https://doc-templates.wbuy.com.br/post/geral-hasopolen/"
+  },
+  {
+    "title": "geral.hasPerformaAI",
+    "path": "04-store/geral-hasperformaai.md",
+    "order": 40,
+    "source_url": "https://doc-templates.wbuy.com.br/post/geral-hasperformaai/"
+  },
+  {
+    "title": "geral.hasSmartHint",
+    "path": "04-store/geral-hassmarthint.md",
+    "order": 41,
+    "source_url": "https://doc-templates.wbuy.com.br/post/geral-hassmarthint/"
+  }
+]

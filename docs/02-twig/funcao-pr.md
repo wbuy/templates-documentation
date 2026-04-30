@@ -39,7 +39,7 @@ Onde:
 
 - `variavel`: qualquer valor disponível no contexto Twig (ex.: `product`, `cart`, `pageProducts`, etc.)
 
-> Observação: dependendo do ambiente/implementação, `pr()` **pode renderizar saída no HTML**. Trate como debug visual e remova antes de publicar.
+> **Observação:** dependendo do ambiente/implementação, `pr()` **pode renderizar saída no HTML**. Trate como debug visual e remova antes de publicar.
 
 ## Quando usar
 

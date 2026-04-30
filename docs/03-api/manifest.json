@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Visao geral da API",
+    "order": 1,
+    "path": "03-api/visao-geral-api.md",
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "categoryGetAll",
+    "order": 2,
+    "path": "03-api/categorygetall.md",
+    "source_url": "https://doc-templates.wbuy.com.br/post/categorygetall/"
+  },
+  {
+    "title": "categoryGetLevel1",
+    "path": "03-api/categorygetlevel1.md",
+    "order": 3,
+    "source_url": "https://doc-templates.wbuy.com.br/post/categorygetlevel1/"
+  },
+  {
+    "title": "categoryGetLevel2",
+    "path": "03-api/categorygetlevel2.md",
+    "order": 4,
+    "source_url": "https://doc-templates.wbuy.com.br/post/categorygetlevel2/"
+  },
+  {
+    "title": "categoryGetLevel3",
+    "path": "03-api/categorygetlevel3.md",
+    "order": 5,
+    "source_url": "https://doc-templates.wbuy.com.br/post/categorygetlevel3/"
+  },
+  {
+    "title": "Configuracoes config_tema.json",
+    "path": "03-api/configuracoes-config_tema.json.md",
+    "order": 6,
+    "source_url": "https://doc-templates.wbuy.com.br/post/configuracoes-config_tema-json/"
+  },
+  {
+    "title": "getColors",
+    "order": 7,
+    "path": "03-api/getcolors.md",
+    "source_url": "https://doc-templates.wbuy.com.br/post/getcolors/"
+  },
+  {
+    "title": "getLastOrderUser",
+    "path": "03-api/getlastorderuser.md",
+    "order": 8,
+    "source_url": "https://doc-templates.wbuy.com.br/post/getlastorderuser/"
+  },
+  {
+    "title": "getVariations",
+    "order": 9,
+    "path": "03-api/getvariations.md",
+    "source_url": "https://doc-templates.wbuy.com.br/post/getvariations/"
+  },
+  {
+    "title": "productGet",
+    "path": "03-api/productget.md",
+    "order": 10,
+    "source_url": "https://doc-templates.wbuy.com.br/post/productget/"
+  }
+]

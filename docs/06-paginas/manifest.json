@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Visao geral das paginas customizaveis",
+    "path": "06-paginas/visao-geral-paginas.md",
+    "order": 1,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Detalhes do produto",
+    "path": "06-paginas/detalhes-do-produto.md",
+    "order": 2,
+    "source_url": "https://doc-templates.wbuy.com.br/post/detalhes-do-produto/"
+  },
+  {
+    "title": "Pagina da Vitrine Personalizada",
+    "path": "06-paginas/pagina-da-vitrine-personalizada.md",
+    "order": 3,
+    "source_url": "https://doc-templates.wbuy.com.br/post/pagina-da-vitrine-personalizada/"
+  },
+  {
+    "title": "Pagina de busca",
+    "path": "06-paginas/pagina-de-busca.md",
+    "order": 4,
+    "source_url": "https://doc-templates.wbuy.com.br/post/pagina-de-busca/"
+  },
+  {
+    "title": "Pagina de categorias",
+    "path": "06-paginas/pagina-de-categorias.md",
+    "order": 5,
+    "source_url": "https://doc-templates.wbuy.com.br/post/pagina-de-categorias/"
+  },
+  {
+    "title": "Pagina de produtos de uma Filial (Multiloja)",
+    "path": "06-paginas/pagina-de-produtos-de-uma-filial-multiloja.md",
+    "order": 6,
+    "source_url": "https://doc-templates.wbuy.com.br/post/pagina-de-produtos-de-uma-filial-multiloja/"
+  },
+  {
+    "title": "Pagina de produtos de uma Marca",
+    "path": "06-paginas/pagina-de-produtos-de-uma-marca.md",
+    "order": 7,
+    "source_url": "https://doc-templates.wbuy.com.br/post/pagina-de-produtos-de-uma-marca/"
+  },
+  {
+    "title": "Paginas customizadas",
+    "path": "06-paginas/paginas-customizadas.md",
+    "order": 8,
+    "source_url": "https://doc-templates.wbuy.com.br/post/paginas-customizadas/"
+  }
+]

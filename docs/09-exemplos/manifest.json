@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Exemplo: Home com banners e vitrine",
+    "path": "09-exemplos/home-com-banners-e-vitrine.md",
+    "order": 1,
+    "source_url": "https://doc-templates.wbuy.com.br/post/pagina-inicial-modelo-01/"
+  },
+  {
+    "title": "Exemplo: Pagina de produto com SKU",
+    "path": "09-exemplos/pagina-produto-com-sku.md",
+    "order": 2,
+    "source_url": "https://doc-templates.wbuy.com.br/post/widget-produto-sku/"
+  },
+  {
+    "title": "Exemplo: Busca com paginacao",
+    "path": "09-exemplos/busca-com-paginacao.md",
+    "order": 3,
+    "source_url": "https://doc-templates.wbuy.com.br/post/pagina-de-busca/"
+  },
+  {
+    "title": "Exemplo: Categorias com menu lateral",
+    "path": "09-exemplos/categorias-com-menu-lateral.md",
+    "order": 4,
+    "source_url": "https://doc-templates.wbuy.com.br/post/pagina-de-categorias/"
+  },
+  {
+    "title": "Exemplo: Carrinho suspenso assincrono",
+    "path": "09-exemplos/carrinho-suspenso-assincrono.md",
+    "order": 5,
+    "source_url": "https://doc-templates.wbuy.com.br/post/carrinho-suspenso/"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Visao geral do Twig v2",
+    "path": "02-twig/visao-geral-twig.md",
+    "order": 1,
+    "source_url": "https://twig.symfony.com/doc/2.x/templates.html"
+  },
+  {
+    "title": "Sintaxe basica do Twig",
+    "path": "02-twig/sintaxe-basica.md",
+    "order": 2,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Loops for",
+    "path": "02-twig/loops-for.md",
+    "order": 3,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Condicionais if",
+    "path": "02-twig/condicionais-if.md",
+    "order": 4,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "include no Twig",
+    "path": "02-twig/include-no-twig.md",
+    "order": 5,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Funcao pr()",
+    "path": "02-twig/funcao-pr.md",
+    "order": 6,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Funcao separa()",
+    "path": "02-twig/funcao-separa.md",
+    "order": 7,
+    "source_url": "https://doc-templates.wbuy.com.br/post/recursos-gerais/"
+  },
+  {
+    "title": "Funcao plural()",
+    "path": "02-twig/funcao-plural.md",
+    "order": 8,
+    "source_url": "https://doc-templates.wbuy.com.br/post/recursos-gerais/"
+  },
+  {
+    "title": "Exemplo de loop com pr()",
+    "path": "02-twig/exemplo-loop-pr.md",
+    "order": 9,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  }
+]

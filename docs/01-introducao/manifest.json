@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Visao geral dos templates wBuy",
+    "order": 1,
+    "path": "01-introducao/visao-geral.md",
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Por onde comecar",
+    "path": "01-introducao/por-onde-comecar.md",
+    "order": 2,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "wBuy Watcher (NPM)",
+    "order": 3,
+    "path": "01-introducao/wbuy-watcher-npm.md",
+    "source_url": "https://www.npmjs.com/package/wbuy-watcher"
+  },
+  {
+    "title": "Codificacao ISO-8859-1",
+    "order": 4,
+    "path": "01-introducao/encoding-iso-8859-1.md",
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Telas customizaveis suportadas",
+    "path": "01-introducao/telas-customizaveis.md",
+    "order": 5,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Criacao de widgets com include",
+    "path": "01-introducao/criacao-de-widgets-com-include.md",
+    "order": 6,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Documentacao API no Postman",
+    "order": 7,
+    "path": "01-introducao/documentacao-api-postman.md",
+    "source_url": "https://documenter.getpostman.com/view/4141833/RWTsquyN?version=latest"
+  },
+  {
+    "title": "Chamadas auxiliares",
+    "order": 8,
+    "path": "01-introducao/chamadas-auxiliares.md",
+    "source_url": "https://doc-templates.wbuy.com.br/post/chamadas-auxiliares/"
+  },
+  {
+    "title": "Checklist de modulos obrigatorios",
+    "path": "01-introducao/checklist-modulos-obrigatorios.md",
+    "order": 9,
+    "source_url": "https://doc-templates.wbuy.com.br/post/checklist-de-modulos-obrigatorios-para-desenvolvimento-de-um-template-wbuy/"
+  },
+  {
+    "title": "Como usar esta documentacao",
+    "path": "01-introducao/como-usar-esta-documentacao.md",
+    "order": 10,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  }
+]

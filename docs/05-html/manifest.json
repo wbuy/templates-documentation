@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Visao geral dos componentes HTML",
+    "path": "05-html/visao-geral-html.md",
+    "order": 1,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Agrupador de produtos",
+    "path": "05-html/agrupador-de-produtos.md",
+    "order": 2,
+    "source_url": "https://doc-templates.wbuy.com.br/post/agrupador-de-produtos/"
+  },
+  {
+    "title": "html.buyTogether(produtoId)",
+    "path": "05-html/html-buytogether-produtoid.md",
+    "order": 3,
+    "source_url": "https://doc-templates.wbuy.com.br/post/html-buytogether-produtoid/"
+  },
+  {
+    "title": "html.productDetailSKU",
+    "path": "05-html/html-productdetailsku.md",
+    "order": 4,
+    "source_url": "https://doc-templates.wbuy.com.br/post/html-productdetailsku/"
+  },
+  {
+    "title": "productBox",
+    "path": "05-html/productbox.md",
+    "order": 5,
+    "source_url": "https://doc-templates.wbuy.com.br/post/productbox/"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Visao geral de modelos",
+    "path": "07-modelos/visao-geral-modelos.md",
+    "order": 1,
+    "source_url": "https://doc-templates.wbuy.com.br/"
+  },
+  {
+    "title": "Carrinho suspenso",
+    "path": "07-modelos/carrinho-suspenso.md",
+    "order": 2,
+    "source_url": "https://doc-templates.wbuy.com.br/post/carrinho-suspenso/"
+  },
+  {
+    "title": "Pagina inicial - Modelo 01",
+    "path": "07-modelos/pagina-inicial-modelo-01.md",
+    "order": 11,
+    "source_url": "https://doc-templates.wbuy.com.br/post/pagina-inicial-modelo-01/"
+  },
+  {
+    "title": "Topo - Modelo 01",
+    "path": "07-modelos/topo-modelo-01.md",
+    "order": 14,
+    "source_url": "https://doc-templates.wbuy.com.br/post/topo-modelo-01/"
+  },
+  {
+    "title": "Variaveis CSS - Geral",
+    "path": "07-modelos/variaveis-css-geral.md",
+    "order": 20,
+    "source_url": "https://doc-templates.wbuy.com.br/post/variaveis-css-geral/"
+  },
+  {
+    "title": "Widget de Banners Principais",
+    "path": "07-modelos/widget-de-banners-principais-slides-da-pagina-inicial.md",
+    "order": 32,
+    "source_url": "https://doc-templates.wbuy.com.br/post/..."
+  },
+  {
+    "title": "Widget Produto SKU",
+    "path": "07-modelos/widget-produto-sku.md",
+    "order": 38,
+    "source_url": "https://doc-templates.wbuy.com.br/post/widget-produto-sku/"
+  }
+]
