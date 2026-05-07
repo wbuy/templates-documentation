@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Sintaxe basica do Twig"
+slug: "sintaxe-basica"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Sintaxe basica do Twig."
 tags: ["placeholder", "pendente"]
 related: []
 ---

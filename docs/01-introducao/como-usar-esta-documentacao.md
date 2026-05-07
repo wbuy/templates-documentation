@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
-doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+title: "Como usar esta documentacao"
+slug: "como-usar-esta-documentacao"
+doc_type: "how-to"
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Como usar esta documentacao."
 tags: ["placeholder", "pendente"]
 related: []
 ---

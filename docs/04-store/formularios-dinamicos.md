@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Formularios dinamicos"
+slug: "formularios-dinamicos"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Formularios dinamicos."
 tags: ["placeholder", "pendente"]
 related: []
 ---

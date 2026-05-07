@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "securitySeal"
+slug: "securityseal"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre securitySeal."
 tags: ["placeholder", "pendente"]
 related: []
 ---

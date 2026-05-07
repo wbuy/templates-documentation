@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "getColors"
+slug: "getcolors"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre getColors."
 tags: ["placeholder", "pendente"]
 related: []
 ---

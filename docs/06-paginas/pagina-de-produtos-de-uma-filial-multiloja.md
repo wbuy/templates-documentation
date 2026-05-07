@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Pagina de produtos de uma Filial (Multiloja)"
+slug: "pagina-de-produtos-de-uma-filial-multiloja"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Pagina de produtos de uma Filial (Multiloja)."
 tags: ["placeholder", "pendente"]
 related: []
 ---

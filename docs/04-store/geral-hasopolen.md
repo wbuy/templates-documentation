@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "geral.hasOpolen"
+slug: "geral-hasopolen"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre geral.hasOpolen."
 tags: ["placeholder", "pendente"]
 related: []
 ---

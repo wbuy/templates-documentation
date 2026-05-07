@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "html.productDetailSKU"
+slug: "html-productdetailsku"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre html.productDetailSKU."
 tags: ["placeholder", "pendente"]
 related: []
 ---

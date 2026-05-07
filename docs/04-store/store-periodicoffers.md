@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "store.periodicOffers()"
+slug: "store-periodicoffers"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre store.periodicOffers()."
 tags: ["placeholder", "pendente"]
 related: []
 ---

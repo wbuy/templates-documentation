@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Visao geral do Twig v2"
+slug: "visao-geral-twig"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Visao geral do Twig v2."
 tags: ["placeholder", "pendente"]
 related: []
 ---

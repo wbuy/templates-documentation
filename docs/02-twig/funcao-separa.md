@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
-doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+title: "Funcao separa()"
+slug: "funcao-separa"
+doc_type: "reference"
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Funcao separa()."
 tags: ["placeholder", "pendente"]
 related: []
 ---

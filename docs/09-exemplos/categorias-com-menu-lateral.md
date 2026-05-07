@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Exemplo: Categorias com menu lateral"
+slug: "categorias-com-menu-lateral"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Exemplo: Categorias com menu lateral."
 tags: ["placeholder", "pendente"]
 related: []
 ---

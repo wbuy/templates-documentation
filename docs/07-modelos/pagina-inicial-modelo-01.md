@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Pagina inicial - Modelo 01"
+slug: "pagina-inicial-modelo-01"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Pagina inicial - Modelo 01."
 tags: ["placeholder", "pendente"]
 related: []
 ---

@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Exemplo: Home com banners e vitrine"
+slug: "home-com-banners-e-vitrine"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Exemplo: Home com banners e vitrine."
 tags: ["placeholder", "pendente"]
 related: []
 ---

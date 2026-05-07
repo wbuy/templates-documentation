@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Visao geral das paginas customizaveis"
+slug: "visao-geral-paginas"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Visao geral das paginas customizaveis."
 tags: ["placeholder", "pendente"]
 related: []
 ---

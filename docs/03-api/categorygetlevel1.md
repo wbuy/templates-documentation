@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "categoryGetLevel1"
+slug: "categorygetlevel1"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre categoryGetLevel1."
 tags: ["placeholder", "pendente"]
 related: []
 ---

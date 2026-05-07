@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "html.buyTogether(produtoId)"
+slug: "html-buytogether-produtoid"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre html.buyTogether(produtoId)."
 tags: ["placeholder", "pendente"]
 related: []
 ---

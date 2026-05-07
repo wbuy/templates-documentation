@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Documentacao API no Postman"
+slug: "documentacao-api-postman"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Documentacao API no Postman."
 tags: ["placeholder", "pendente"]
 related: []
 ---

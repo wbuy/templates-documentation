@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Codificacao ISO-8859-1"
+slug: "encoding-iso-8859-1"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Codificacao ISO-8859-1."
 tags: ["placeholder", "pendente"]
 related: []
 ---

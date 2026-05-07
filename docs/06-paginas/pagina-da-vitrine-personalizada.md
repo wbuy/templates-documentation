@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Pagina da Vitrine Personalizada"
+slug: "pagina-da-vitrine-personalizada"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Pagina da Vitrine Personalizada."
 tags: ["placeholder", "pendente"]
 related: []
 ---

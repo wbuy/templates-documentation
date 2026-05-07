@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Criacao de widgets com include"
+slug: "criacao-de-widgets-com-include"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Criacao de widgets com include."
 tags: ["placeholder", "pendente"]
 related: []
 ---

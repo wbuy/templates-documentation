@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Configuracoes config_tema.json"
+slug: "configuracoes-config_tema.json"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Configuracoes config_tema.json."
 tags: ["placeholder", "pendente"]
 related: []
 ---

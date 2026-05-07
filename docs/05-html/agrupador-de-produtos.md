@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Agrupador de produtos"
+slug: "agrupador-de-produtos"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Agrupador de produtos."
 tags: ["placeholder", "pendente"]
 related: []
 ---

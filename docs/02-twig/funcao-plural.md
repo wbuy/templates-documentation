@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
-doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+title: "Funcao plural()"
+slug: "funcao-plural"
+doc_type: "reference"
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Funcao plural()."
 tags: ["placeholder", "pendente"]
 related: []
 ---

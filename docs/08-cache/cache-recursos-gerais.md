@@ -1,8 +1,8 @@
 ---
-title: "Mapa da documentacao"
-slug: "sidebar"
+title: "Cache - Recursos gerais"
+slug: "cache-recursos-gerais"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Mapa da documentacao."
+summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Cache - Recursos gerais."
 tags: ["placeholder", "pendente"]
 related: []
 ---
