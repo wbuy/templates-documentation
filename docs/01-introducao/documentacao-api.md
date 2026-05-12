@@ -4,10 +4,10 @@ slug: "documentacao-api"
 doc_type: "concept"
 summary: "Visão geral da API wBuy para desenvolvimento de templates. Explora os recursos disponíveis, endpoints principais e as referências técnicas necessárias para integrar chamadas de API em temas personalizados."
 tags:
-  - "api"
-  - "templates"
-  - "documentação"
-  - "referência"
+  - api
+  - templates
+  - documentação
+  - referência
 related:
   - 01-introducao/visao-geral.md
   - 01-introducao/por-onde-comecar.md
