@@ -74,7 +74,7 @@ Você está respondendo a pergunta: *"Como renderizar dinamicamente as variaçõ
 ### Estrutura das 10 Pastas
 
 | Pasta | Propósito | Comece por |
-|-------|----------|-----------|
+| ------- | ---------- | ----------- |
 | `00-indice` | Mapa e taxonomia | `sidebar.md` — índice navegável completo |
 | `01-introducao` | Fundamentos da plataforma | Qualquer visão geral, depois por onde começar |
 | `02-twig` | Engine de templates Twig v2 | `visao-geral-twig.md` depois tópicos específicos |
