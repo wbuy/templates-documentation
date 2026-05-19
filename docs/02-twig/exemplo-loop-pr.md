@@ -196,7 +196,7 @@ Você recebe `pageProducts` (lista de produtos) de uma página de categoria. Voc
 
 **Solução**: Use `pr()` para visualizar exatamente quais campos existem. Não adivinhe.
 
-### Confusion entre `pr()` e `dump()`
+### Confusão entre `pr()` e `dump()`
 
 **Problema**: Você usa `dump()` e nada aparece, ou vice-versa.
 
