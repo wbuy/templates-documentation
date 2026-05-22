@@ -1,59 +1,76 @@
 ---
 title: "Agrupador de produtos"
 slug: "agrupador-de-produtos"
-doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Agrupador de produtos."
-tags: ["placeholder", "pendente"]
-related: []
+doc_type: "reference"
+summary: "Componente que retorna produtos relacionados configurados no módulo Upsell e Cross-sell."
+tags: ["html", "agrupador", "upsell", "cross-sell", "produtos-relacionados"]
+related: ["05-html/html-productdetailsku.md", "05-html/productbox.md", "04-store/store-productdetail.md"]
 ---
 
 ## O que faz
 
-[Escrever descrição do objetivo e propósito - máx 3 parágrafos]
+O Agrupador de produtos é um componente responsável por retornar todos os produtos relacionados e linkados através do módulo Upsell e Cross-sell da plataforma. Este recurso permite exibir sugestões de compra complementar de forma automática.
+
+O componente busca automaticamente os produtos que foram configurados como relacionados a um produto específico, agrupados conforme as definições de Upsell e Cross-sell feitas no painel de controle.
 
 ## Sintaxe
 
+```html
+<component data-modulo="product-grouper" loading="false" data-pid="{{ produto.id }}"></component>
 ```
-[Documentar sintaxe, parâmetros, retornos]
-```
+
+**Parâmetros:**
+
+| Parâmetro | Tipo | Obrigatório | Descrição |
+|-----------|------|-------------|-----------|
+| `data-modulo` | string | Sim | Deve ser sempre `"product-grouper"` |
+| `data-pid` | int | Sim | ID do produto da página atual |
+| `loading` | bool | Não | Mostra loading enquanto processa (padrão: false) |
 
 ## Quando usar
 
-- [Casos ideais]
-- [Pré-condições]
-- [Limitações]
+- Na página de detalhes do produto para sugerir complementos
+- Para aumentar valor médio de pedido através de recomendações
+- Quando o lojista configurou produtos relacionados via Upsell/Cross-sell
 
 ## Exemplo
 
-```
-[Exemplo funcional mínimo]
+```html
+<div class="produtos-relacionados">
+  <component data-modulo="product-grouper" loading="false" data-pid="{{ extra.id }}"></component>
+</div>
 ```
 
 Saída esperada:
-```
-[Output esperado]
+
+```text
+HTML renderizado com os produtos relacionados configurados no painel, mantendo o layout definido no componente.
 ```
 
 ## Observações
 
-- [Compatibilidade]
-- [Performance]
-- [Comportamento em cache]
-- [Impacto SEO/Mobile]
+- O id do produto é obrigatório para que o componente busque seus relacionados
+- A quantidade de produtos e layout são definidos na configuração da loja
+- Este é um componente dinâmico que é processado pela plataforma
+- Se nenhum produto relacionado estiver configurado, o componente não renderizará
+- Compatível com mobile e desktop
 
 ## Erros comuns
 
-### Erro frequente 1
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+### Componente não exibe produtos
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+**Problema**: O agrupador não mostra nenhum produto
+**Diagnóstico**: Verificar se foram configurados produtos relacionados no painel de controle do módulo Upsell/Cross-sell para o produto em questão
+**Solução**: Acessar o painel, ir ao módulo Upsell/Cross-sell e vincular produtos ao item desejado
+
+### ID do produto incorreto
+
+**Problema**: O componente renderiza mas com produtos errados
+**Diagnóstico**: O `data-pid` pode estar recebendo um valor inválido
+**Solução**: Verificar que `{{ extra.id }}` ou `{{ produto.id }}` está sendo passado corretamente no contexto da página
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [html.productDetailSKU](05-html/html-productdetailsku.md)
+- [html.buyTogether(produtoId)](05-html/html-buytogether-produtoid.md)
+- [productBox](05-html/productbox.md)

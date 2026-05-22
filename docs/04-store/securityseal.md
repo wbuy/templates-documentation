@@ -2,9 +2,16 @@
 title: "securitySeal"
 slug: "securityseal"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre securitySeal."
-tags: ["placeholder", "pendente"]
-related: []
+summary: "Recurso responsável por exibir selos e badges de segurança/confiança da loja para aumentar credibilidade junto aos clientes."
+tags:
+  - store
+  - segurança
+  - badges
+  - credibilidade
+  - confiança
+related:
+  - 04-store/visao-geral-store.md
+  - 04-store/getstoredata.md
 ---
 
 ## O que faz

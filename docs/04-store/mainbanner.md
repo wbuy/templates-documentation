@@ -1,52 +1,99 @@
 ---
 title: "mainBanner"
 slug: "mainbanner"
-doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre mainBanner."
-tags: ["placeholder", "pendente"]
-related: []
+doc_type: "reference"
+summary: "Método que retorna banners principais da loja com suporte a layouts responsivos para desktop e mobile."
+tags:
+  - store
+  - banners
+  - slides
+  - carrossel
+related:
+  - 04-store/visao-geral-store.md
+  - 04-store/publicitybanner.md
 ---
 
 ## O que faz
 
-[Escrever descrição do objetivo e propósito - máx 3 parágrafos]
+Disponibiliza como retorno os banners principais (slides) da loja virtual. Este método retorna dados de banners criados no painel de controle e oferece elementos HTML prontos para renderização.
 
 ## Sintaxe
 
-```
-[Documentar sintaxe, parâmetros, retornos]
+```twig
+{% set slides = store.mainBanner() %}
+{# com parâmetro opcional #}
+{% set slides = store.mainBanner({titulo: 'Banner especial'}) %}
 ```
 
 ## Quando usar
 
-- [Casos ideais]
-- [Pré-condições]
-- [Limitações]
+- Na página inicial para exibir banners principais
+- Em seções de destaque com imagens e links
+- Para criar carrosséis de imagens
+- Quando precisa de banners responsivos (desktop e mobile)
 
 ## Exemplo
 
-```
-[Exemplo funcional mínimo]
+```twig
+{% set slides = store.mainBanner() %}
+{% if slides.raw|length >= 1 %}
+<div class="{{ slides.width == 'block' ? 'block' : 'central' }}{{ slogan == '' ? ' mb-0' : '' }}">
+	<div id="slider" class="mb-0 owl-carousel owl-theme">
+		{% for slide in slides.items %}
+		<div class="item">
+			<div class="{{ slide.foto_mobile == '' ? 'block' : 'd-none d-md-block' }}">
+				{{ slide.desktop_raw|raw }}
+			</div>
+			{% if slide.foto_mobile %}
+			<div class="d-block d-md-none">
+				{{ slide.mobile_raw|raw }}
+			</div>
+			{% endif %}
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endif %}
 ```
 
 Saída esperada:
 ```
-[Output esperado]
+Carrossel de banners responsivos (desktop/mobile)
 ```
+
+## Retorno dos dados
+
+**items** - Array de itens (banners/slides)
+- `items[x].id` (string) - ID do banner
+- `items[x].titulo` (string) - Título do banner
+- `items[x].foto` (string) - URL da imagem desktop
+- `items[x].foto_mobile` (string) - URL da imagem mobile
+- `items[x].link` (string) - URL do link do banner
+- `items[x].target` (string) - Target do link (_blank, _self, etc)
+- `items[x].desktop_raw` (string raw) - Imagem pronta para renderização desktop
+- `items[x].mobile_raw` (string raw) - Imagem pronta para renderização mobile
+- `items[x].avancado` (array) - Opções avançadas (texto, cor de texto, etc)
+
+**items_per_view** - Int indicando quantidade de banners por visualização
+
+**raw** - Array com elementos HTML prontos
+- `raw.desktop` - Imagens prontas para desktop
+- `raw.mobile` - Imagens prontas para mobile
+
+**width** - String indicando largura ('block' = 100%, 'center' = centralizado)
+
+## Parâmetros de consulta
+
+| Parâmetro | Padrão | Descrição |
+|-----------|---------|-------------|
+| titulo | '' | Filtra pelo título do item |
 
 ## Observações
 
-- [Compatibilidade]
-- [Performance]
-- [Comportamento em cache]
-- [Impacto SEO/Mobile]
-
-## Erros comuns
-
-### Erro frequente 1
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+- Suporta imagens diferentes para desktop e mobile
+- Os dados "*_raw" já vém preparados para inserção no HTML
+- É recomendado usar OWL Carousel para melhor apresentação
+- Suporta seções em formato block (100%) ou centralizado
 
 ### Erro frequente 2
 **Problema**: [Descrição]

@@ -1,52 +1,77 @@
 ---
 title: "productBoxDefault"
 slug: "productboxdefault"
-doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre productBoxDefault."
-tags: ["placeholder", "pendente"]
-related: []
+doc_type: "reference"
+summary: "Método que retorna box de produto formatado com layout padrão wBuy pronto para renderização em HTML."
+tags:
+  - store
+  - produtos
+  - box
+  - rendering
+related:
+  - 04-store/visao-geral-store.md
+  - 04-store/producttobox.md
 ---
 
 ## O que faz
 
-[Escrever descrição do objetivo e propósito - máx 3 parágrafos]
+Disponibiliza como retorno os dados prontos do Box do Produto na loja virtual. Este método retorna um box de produto padrão wBuy montado, diferentemente de html.productBox() que retorna dados separados.
 
 ## Sintaxe
 
-```
-[Documentar sintaxe, parâmetros, retornos]
+```twig
+{{ store.productBoxDefault(produto) }}
+{# com parâmetros #}
+{{ store.productBoxDefault(produto, {total_fotos: 2}) }}
 ```
 
 ## Quando usar
 
-- [Casos ideais]
-- [Pré-condições]
-- [Limitações]
+- Para exibir caixas de produtos de forma padronizada
+- Em listas de produtos com layout padrão wBuy
+- Quando usa store.productToBox() para recuperar produtos
+- Para manter consistência visual em toda a loja
 
 ## Exemplo
 
-```
-[Exemplo funcional mínimo]
+```twig
+{% set produtosBox = store.productToBox({limit:'4', order:'random'}) %}
+<div class="row">
+	{% for produto in produtosBox.data %}
+	<div class="col-md-3">
+	{{ store.productBoxDefault(produto) }}
+	</div>
+    {% endfor %}
+</div>
 ```
 
 Saída esperada:
 ```
-[Output esperado]
+Caixas de produtos renderizadas com layout padrão wBuy
 ```
+
+## Retorno dos dados
+
+Este método retorna HTML já renderizado com a caixa do produto formatada com:
+- Imagem do produto
+- Título
+- Preço
+- Botão de compra
+- Avaliações (se configurado)
+- Frete grátis (se aplicável)
+
+## Parâmetros de consulta
+
+| Parâmetro | Padrão | Descrição |
+|-----------|---------|-------------|
+| total_fotos | 2 | A quantidade total de fotos que deve ser retornado por produto |
 
 ## Observações
 
-- [Compatibilidade]
-- [Performance]
-- [Comportamento em cache]
-- [Impacto SEO/Mobile]
-
-## Erros comuns
-
-### Erro frequente 1
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+- É necessário passar um produto como parâmetro (recuperado de store.productToBox)
+- Diferentemente de html.productBox(), este método retorna HTML completo
+- Segue o layout padrão definido no painel de controle
+- Os dados devem vir de store.productToBox() para compatibilidade
 
 ### Erro frequente 2
 **Problema**: [Descrição]

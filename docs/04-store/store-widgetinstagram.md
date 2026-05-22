@@ -1,52 +1,78 @@
 ---
 title: "store.widgetInstagram()"
 slug: "store-widgetinstagram"
-doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre store.widgetInstagram()."
-tags: ["placeholder", "pendente"]
-related: []
+doc_type: "reference"
+summary: "Método que disponibiliza widget de Instagram com feed de posts do lojista para integração social na loja."
+tags:
+  - store
+  - widget
+  - instagram
+  - redes-sociais
+related:
+  - 04-store/visao-geral-store.md
+  - 04-store/widgetfacebook.md
+  - 04-store/socialicons.md
 ---
 
 ## O que faz
 
-[Escrever descrição do objetivo e propósito - máx 3 parágrafos]
+Disponibiliza um widget de Instagram configurado para a loja virtual. Este método integra o feed/posts do Instagram do lojista diretamente no template.
 
 ## Sintaxe
 
-```
-[Documentar sintaxe, parâmetros, retornos]
+```twig
+{% set instagram = store.widgetInstagram() %}
 ```
 
 ## Quando usar
 
-- [Casos ideais]
-- [Pré-condições]
-- [Limitações]
+- Para exibir feed de Instagram na loja
+- Em rodapé ou áreas de destaque social
+- Para integração com redes sociais
+- Para criar seções de "Siga-nos no Instagram"
 
 ## Exemplo
 
-```
-[Exemplo funcional mínimo]
+```twig
+{% set instagram = store.widgetInstagram() %}
+{% if instagram.enabled %}
+<section class="instagram-widget">
+	<h3>{{ instagram.titulo }}</h3>
+	<div id="instagram-feed" class="instagram-feed">
+		{# O widget se autorenderiza via JavaScript #}
+	</div>
+	<script src="{{ instagram.script_url }}"></script>
+</section>
+{% endif %}
 ```
 
 Saída esperada:
 ```
-[Output esperado]
+Widget de Instagram renderizado com posts
 ```
+
+## Retorno dos dados
+
+**enabled** (bool) - Se o widget está ativado
+
+**titulo** (string) - Título do widget
+
+**script_url** (string) - URL do script do widget
+
+**conta** (string) - Nome da conta Instagram
+
+**limite** (int) - Quantidade de posts a exibir
+
+## Parâmetros de consulta
+
+Nenhum parâmetro obrigatório.
 
 ## Observações
 
-- [Compatibilidade]
-- [Performance]
-- [Comportamento em cache]
-- [Impacto SEO/Mobile]
-
-## Erros comuns
-
-### Erro frequente 1
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+- Requer configuração de conta Instagram no painel
+- O widget usa JavaScript para renderização
+- Ideal para integração social
+- Suporta customização de layout
 
 ### Erro frequente 2
 **Problema**: [Descrição]

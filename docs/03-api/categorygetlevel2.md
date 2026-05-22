@@ -29,6 +29,9 @@ Ideal para renderizar menus em cascata, sidebars de filtros e navegação secund
 {# Sem parâmetros - retorna todas as categorias de nível 2 #}
 {% set subcategorias = api.categoryGetLevel2() %}
 
+{# Para retornar as subcategorias de uma categoria específica #}
+{% set subcategorias = api.categoryGetLevel2({categoria_id: 1}) %}
+
 {# Com parâmetros de consulta - filtra resultados #}
 {% set subcategorias = api.categoryGetLevel2({id:'1', q:'eletronicos'}) %}
 ```
@@ -45,10 +48,47 @@ Todos os parâmetros possíveis estão documentados na [API Postman](https://doc
 ### Retorno
 
 Retorna um array com objetos de categoria nível 2. Cada objeto contém:
-- ID, nome, slug, descrição
+
+- Dados da categoria (`id`, `nome`, `url`, `ordenar` etc)
 - Referência à categoria pai (parent_id)
 - URLs e metadados
 - **Sem categorias nível 3 aninhadas** (apenas nível 2)
+
+#### Exemplo de estrutura retornada
+
+```json
+[
+  {
+    "id": 343564,
+    "tipo": 2,
+    "tabela": 1,
+    "nome": "coleções",
+    "url": "colecoes",
+    "icone_tipo": 1,
+    "icone": "",
+    "cor": "",
+    "posicao": 0,
+    "menu": 1,
+    "menu_mobile": 1,
+    "ativo": 1,
+    "oculto": 0,
+    "ordenar": "lancamento",
+    "categoria_link": "http://www.loja.com.br/link/da/categoria",
+    "google_category": "",
+    "categoria_target": "_self",
+    "total_produtos": 0,
+    "filtro_preco": 50,
+    "subtitulo": "",
+    "seo_title": "",
+    "seo_description": "",
+    "seo_metatags": "",
+    "seo_info": "",
+    "seo_scripts": "",
+    "total_level2": 0,
+    "total_produtos_ativos": 0
+  },
+]
+```
 
 ## Quando usar
 
@@ -92,6 +132,7 @@ Retorna um array com objetos de categoria nível 2. Cada objeto contém:
 ```
 
 Saída esperada (HTML):
+
 ```html
 <aside class="categories-sidebar">
   <h3>Subcategorias</h3>
@@ -143,16 +184,19 @@ Saída esperada (HTML):
 ## Erros comuns
 
 ### Erro frequente 1: "Filtro por categoria pai não funciona"
+
 **Problema**: Passar `{id: 5}` não retorna apenas filhas da categoria 5.
 **Diagnóstico**: Parâmetro `id` pode funcionar diferente ou API pode precisar de nome diferente (ex: `parent_id`).
 **Solução**: Consultar [API Postman](https://documenter.getpostman.com/view/4141833/RWTsquyN) para sintaxe exata. Debugar com `{{ pr(api.categoryGetLevel2({id: 5})) }}`.
 
 ### Erro frequente 2: "Categorias de outros pais aparecem misturadas"
+
 **Problema**: Resultado contém subcategorias de múltiplas categorias pai.
 **Diagnóstico**: Sem filtro, função retorna todas as nível 2. Precisa-se passar parâmetro correto.
 **Solução**: Sempre passar ID da categoria pai: `api.categoryGetLevel2({id: category.id})`.
 
 ### Erro frequente 3: "Nível 3 aparece nos resultados"
+
 **Problema**: Algumas categorias retornadas têm sub-categorias aninhadas (nível 3).
 **Diagnóstico**: Pode haver confusão entre nível 2 e estrutura aninhada.
 **Solução**: Verificar estrutura com `{{ pr(subcat) }}` para confirmar que são nível 2. Se houver nível 3 aninhado, ignorar em template.

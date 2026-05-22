@@ -2,51 +2,56 @@
 title: "geral.hasOpolen"
 slug: "geral-hasopolen"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre geral.hasOpolen."
-tags: ["placeholder", "pendente"]
-related: []
+summary: "Recurso responsável por mostrar as instituições participantes do programa O Pólen exclusivamente na página de detalhes do produto."
+tags:
+  - geral
+  - opolen
+  - página-detalhe
+  - instituições
+related:
+  - 04-store/visao-geral-store.md
+  - 04-store/store-productdetail.md
 ---
 
 ## O que faz
 
-[Escrever descrição do objetivo e propósito - máx 3 parágrafos]
+Recurso responsável por mostrar as instituições participantes do programa O Pólen quando o lojista tem contato com eles. Exclusivamente deve ser mostrado na página de detalhes do produto.
 
 ## Sintaxe
 
-```
-[Documentar sintaxe, parâmetros, retornos]
+```twig
+{% if geral.hasOpolen %}
+  <opolen></opolen>
+{% endif %}
 ```
 
 ## Quando usar
 
-- [Casos ideais]
-- [Pré-condições]
-- [Limitações]
+- Na página de detalhes do produto
+- Quando o lojista tem contato ativo com O Pólen
+- Para exibir instituições participantes do programa
 
 ## Exemplo
 
-```
-[Exemplo funcional mínimo]
+```twig
+{% if geral.hasOpolen %}
+<div class="opolen-container">
+  <opolen></opolen>
+</div>
+{% endif %}
 ```
 
 Saída esperada:
 ```
-[Output esperado]
+Componente de O Pólen renderizado na página
 ```
 
 ## Observações
 
-- [Compatibilidade]
-- [Performance]
-- [Comportamento em cache]
-- [Impacto SEO/Mobile]
-
-## Erros comuns
-
-### Erro frequente 1
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+- Esta é uma verificação booleana que retorna verdadeiro ou falso
+- O componente `<opolen></opolen>` é um web component que gerencia sua própria renderização
+- Deve ser usado exclusivamente na página de detalhes do produto
+- Não há parâmetros a serem passados para esta verificação
 
 ### Erro frequente 2
 **Problema**: [Descrição]

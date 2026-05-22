@@ -1,59 +1,79 @@
 ---
-title: "getURLCheckoutTemp"
+title: "getURLCheckoutTemp()"
 slug: "geturlcheckouttemp"
-doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre getURLCheckoutTemp."
-tags: ["placeholder", "pendente"]
-related: []
+doc_type: "reference"
+summary: "Gera URL temporária de checkout para adicionar produto dinâmico ao carrinho, útil para cotações e produtos customizados."
+tags:
+  - store
+  - checkout
+  - url
+  - carrinho
+  - customizado
+related:
+  - 04-store/visao-geral-store.md
+  - 04-store/cart.md
 ---
 
 ## O que faz
 
-[Escrever descrição do objetivo e propósito - máx 3 parágrafos]
+O método `store.getURLCheckoutTemp()` gera uma URL de checkout completa com token, permitindo adicionar produtos dinâmicos ao carrinho sem que estejam cadastrados no banco. Recebe parâmetros como SKU, valor, peso, dimensões e prazo de produção, retornando uma URL pronta para usar em links ou redirecionamentos.
 
 ## Sintaxe
 
-```
-[Documentar sintaxe, parâmetros, retornos]
+```twig
+{% set url = store.getURLCheckoutTemp({
+  sku: '1234abc',
+  qtd_minima: '1',
+  valor: 100,
+  produto: 'Produto Custom',
+  peso: 1,
+  comprimento: 10,
+  largura: 15,
+  altura: 10,
+  prazo_producao: 1,
+  frete_gratis: true
+}) %}
+<a href="{{ url }}">Adicionar ao Carrinho</a>
 ```
 
 ## Quando usar
 
-- [Casos ideais]
-- [Pré-condições]
-- [Limitações]
+- Produtos customizados dinâmicos
+- Cotações com valores variáveis
+- Integração com calculadoras
+- Produtos não catalogados
 
 ## Exemplo
 
-```
-[Exemplo funcional mínimo]
-```
-
-Saída esperada:
-```
-[Output esperado]
+```twig
+{% set valor_final = 100 + desconto %}
+{% set url = store.getURLCheckoutTemp({
+  sku: 'CUSTOM-' ~ random(),
+  valor: valor_final,
+  produto: 'Serviço Customizado',
+  frete_gratis: true
+}) %}
+<button onclick="window.location='{{ url }}'">Comprar Agora</button>
 ```
 
 ## Observações
 
-- [Compatibilidade]
-- [Performance]
-- [Comportamento em cache]
-- [Impacto SEO/Mobile]
+- URL contém token temporário
+- Válida por sessão/período definido
+- Todos os parâmetros são obrigatórios
+- Peso e dimensões em KG e CM
 
 ## Erros comuns
 
-### Erro frequente 1
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+### Erro 1: Falta de parâmetro obrigatório
+**Problema**: Esquecer `sku` ou `valor`
+**Solução**: Incluir todos os campos
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+### Erro 2: Tipo errado de valor
+**Problema**: `valor: "100"` (string) em vez de número
+**Solução**: Usar `valor: 100` (número)
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Visão geral store](04-store/visao-geral-store.md)
+- [Cart](04-store/cart.md)

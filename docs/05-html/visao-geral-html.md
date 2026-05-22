@@ -2,58 +2,54 @@
 title: "Visao geral dos componentes HTML"
 slug: "visao-geral-html"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre Visao geral dos componentes HTML."
-tags: ["placeholder", "pendente"]
-related: []
+summary: "Componentes HTML pré-construídos que retornam elementos dinâmicos prontos para uso em templates."
+tags: ["html", "componentes", "templates"]
+related: ["05-html/agrupador-de-produtos.md", "05-html/html-buytogether-produtoid.md", "05-html/html-productdetailsku.md", "05-html/productbox.md"]
 ---
 
 ## O que faz
 
-[Escrever descrição do objetivo e propósito - máx 3 parágrafos]
+Os componentes HTML da plataforma wBuy disponibilizam elementos pré-construídos que retornam estruturas HTML completas e prontas para uso direto em seus templates. Esses componentes encapsulam a lógica de apresentação de dados dinâmicos, permitindo que você insira dados complexos de forma simples e padronizada.
 
-## Sintaxe
+Os principais componentes disponíveis são:
 
-```
-[Documentar sintaxe, parâmetros, retornos]
-```
+- **html.productDetailSKU** — retorna os elementos HTML dos dados dinâmicos da página de detalhes do produto para um SKU específico
+- **html.productBox** — retorna os dados prontos para o box do produto em listagens
+- **html.buyTogether** — exibe o bloco "Compre Junto" quando configurado
+- **Agrupador de produtos** — exibe produtos relacionados através do módulo Upsell/Cross-sell
 
 ## Quando usar
 
-- [Casos ideais]
-- [Pré-condições]
-- [Limitações]
+- Quando você precisa exibir dados dinâmicos de produtos de forma padronizada
+- Para manter consistência visual com a plataforma
+- Quando a complexidade da estrutura HTML justifica reutilização de componentes
+- Em listagens de produtos, detalhes e vitrines
 
-## Exemplo
+## Limitações
 
-```
-[Exemplo funcional mínimo]
-```
+- A estrutura HTML retornada é pré-definida pela plataforma
+- Customizações profundas requerem criação de widgets personalizados
+- Alguns componentes possuem dependências de JavaScript pré-carregado
 
-Saída esperada:
-```
-[Output esperado]
+## Exemplo de uso
+
+A maioria dos componentes segue o padrão:
+
+```twig
+{% set dados = html.componente(parametros) %}
+{{ dados }}
 ```
 
 ## Observações
 
-- [Compatibilidade]
-- [Performance]
-- [Comportamento em cache]
-- [Impacto SEO/Mobile]
-
-## Erros comuns
-
-### Erro frequente 1
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
-
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+- Todos os componentes retornam HTML raw (seguro para interpolação direta)
+- A documentação individual de cada componente detalha seus parâmetros e retorno
+- Alguns componentes requerem JavaScript pré-configurado para funcionar corretamente
+- O comportamento em cache segue as regras gerais da plataforma
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Agrupador de produtos](05-html/agrupador-de-produtos.md)
+- [html.buyTogether(produtoId)](05-html/html-buytogether-produtoid.md)
+- [html.productDetailSKU](05-html/html-productdetailsku.md)
+- [productBox](05-html/productbox.md)

@@ -44,10 +44,42 @@ Todos os parâmetros possíveis estão documentados na [API Postman](https://doc
 ### Retorno
 
 Retorna um array com objetos de cor. Cada objeto contém:
+
 - ID da cor (identificador único)
 - Nome da cor (ex: "Preto", "Azul", "Vermelho")
 - Código hexadecimal (ex: "#000000", "#0000FF")
 - Slug ou identificador interno para URLs
+
+#### Exemplo de estrutura retornada
+
+```json
+[
+  {
+    "id": 559381,
+    "nome": "amarelo",
+    "cor1": "#fff000",
+    "cor2": "",
+    "img": "",
+    "ativo": 1,
+    "tipo": 1,
+    "grupo_id": 0,
+    "grupo_cores": "",
+    "total_produtos": 3
+  },
+  {
+    "id": 559382,
+    "nome": "azul",
+    "cor1": "#0000ff",
+    "cor2": "",
+    "img": "",
+    "ativo": 1,
+    "tipo": 1,
+    "grupo_id": 0,
+    "grupo_cores": "",
+    "total_produtos": 5
+  }
+]
+```
 
 ## Quando usar
 
@@ -72,88 +104,196 @@ Retorna um array com objetos de cor. Cada objeto contém:
 ## Exemplo
 
 ```twig
-{# Arquivo: templates/product-color-selector.twig #}
-<div class="product-colors">
-  <label>Escolha uma cor:</label>
-  
-  <div class="color-grid">
-    {% for cor in api.getColors() %}
-      <div class="color-option">
-        <input type="radio" 
-               name="product-color" 
-               value="{{ cor.id }}"
-               id="color-{{ cor.id }}"
-               {% if loop.first %}checked{% endif %}>
+{# Arquivo: widgets/product-listing-with-color-filter.twig #}
+{% set cores = api.getColors() %}
+{% set cor_selecionada = request.query.cor %}
+
+<section class="products-with-filter">
+  <aside class="filter-sidebar">
+    <h3>Filtrar por Cor</h3>
+    
+    <form method="GET" class="color-filter-form">
+      <div class="color-filter-group">
+        {# Opção "Todas as cores" #}
+        <div class="filter-item">
+          <input type="radio" 
+                 name="cor" 
+                 value=""
+                 id="filter-todas"
+                 {% if not cor_selecionada %}checked{% endif %}>
+          <label for="filter-todas">Todas as cores ({{ store.pageProducts.total }})</label>
+        </div>
         
-        <label for="color-{{ cor.id }}" 
-               class="color-swatch"
-               style="background-color: {{ cor.hex_code }};"
-               title="{{ cor.name }}">
-          {{ cor.name }}
-        </label>
+        {# Filtro de cores com paleta visual #}
+        {% for cor in cores %}
+          <div class="filter-item color-option">
+            <input type="radio" 
+                   name="cor" 
+                   value="{{ cor.id }}"
+                   id="filter-cor-{{ cor.id }}"
+                   class="color-checkbox"
+                   {% if cor_selecionada == cor.id %}checked{% endif %}
+                   onchange="this.form.submit()">
+            
+            <label for="filter-cor-{{ cor.id }}">
+              <span class="color-circle" 
+                    style="background-color: {{ cor.cor1 }};"></span>
+              <span class="color-name">{{ cor.nome }}</span>
+              <span class="color-count">({{ cor.total_produtos }})</span>
+            </label>
+          </div>
+        {% endfor %}
       </div>
-    {% endfor %}
-  </div>
-</div>
+      
+      {# Limpar filtro #}
+      {% if cor_selecionada %}
+        <button type="reset" class="btn-clear-filter">Limpar filtros</button>
+      {% endif %}
+    </form>
+  </aside>
+  
+  <main class="products-grid">
+    <header class="products-header">
+      <h2>Produtos{% if cor_selecionada %} - Cor: {{ cores[cor_selecionada].nome }}{% endif %}</h2>
+      <p class="products-count">{{ store.pageProducts.total }} produto(s) encontrado(s)</p>
+    </header>
+    
+    {# Lista de produtos (usando store.pageProducts) #}
+    {% if store.pageProducts.product %}
+      <div class="grid-products">
+        {% for produto in store.pageProducts.product %}
+          {% include 'widgets/product-card.twig' with {
+            'product': produto,
+            'available_colors': cores
+          } only %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="no-products">Nenhum produto encontrado com essa cor.</p>
+    {% endif %}
+  </main>
+</section>
 
 <style>
-  .color-grid {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+  .products-with-filter {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    padding: 20px;
   }
   
-  .color-swatch {
+  .filter-sidebar {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    height: fit-content;
+  }
+  
+  .color-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .filter-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .color-option label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    flex: 1;
+  }
+  
+  .color-circle {
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+  }
+  
+  .color-option input:checked + label .color-circle {
+    border-color: #000;
+    box-shadow: inset 0 0 0 2px white, 0 0 0 3px #000;
+  }
+  
+  .grid-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .btn-clear-filter {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
-    border: 2px solid transparent;
   }
   
-  .color-option input:checked + .color-swatch {
-    border-color: #333;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  @media (max-width: 768px) {
+    .products-with-filter {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 ```
 
 Saída esperada (HTML):
+
 ```html
-<div class="product-colors">
-  <label>Escolha uma cor:</label>
+<section class="products-with-filter">
+  <aside class="filter-sidebar">
+    <h3>Filtrar por Cor</h3>
+    
+    <form method="GET" class="color-filter-form">
+      <div class="color-filter-group">
+        <div class="filter-item">
+          <input type="radio" name="cor" value="" id="filter-todas" checked>
+          <label for="filter-todas">Todas as cores (24)</label>
+        </div>
+        
+        <div class="filter-item color-option">
+          <input type="radio" name="cor" value="559381" id="filter-cor-559381">
+          <label for="filter-cor-559381">
+            <span class="color-circle" style="background-color: #fff000;"></span>
+            <span class="color-name">amarelo</span>
+            <span class="color-count">(3)</span>
+          </label>
+        </div>
+        
+        <div class="filter-item color-option">
+          <input type="radio" name="cor" value="559382" id="filter-cor-559382" checked>
+          <label for="filter-cor-559382">
+            <span class="color-circle" style="background-color: #0000ff;"></span>
+            <span class="color-name">azul</span>
+            <span class="color-count">(5)</span>
+          </label>
+        </div>
+      </div>
+      
+      <button type="reset" class="btn-clear-filter">Limpar filtros</button>
+    </form>
+  </aside>
   
-  <div class="color-grid">
-    <div class="color-option">
-      <input type="radio" 
-             name="product-color" 
-             value="1"
-             id="color-1"
-             checked>
-      
-      <label for="color-1" 
-             class="color-swatch"
-             style="background-color: #000000;"
-             title="Preto">
-        Preto
-      </label>
+  <main class="products-grid">
+    <header class="products-header">
+      <h2>Produtos - Cor: azul</h2>
+      <p class="products-count">5 produto(s) encontrado(s)</p>
+    </header>
+    
+    <div class="grid-products">
+      <!-- Cards de produtos filtrados por cor -->
     </div>
-    <div class="color-option">
-      <input type="radio" 
-             name="product-color" 
-             value="2"
-             id="color-2">
-      
-      <label for="color-2" 
-             class="color-swatch"
-             style="background-color: #FFFFFF;"
-             title="Branco">
-        Branco
-      </label>
-    </div>
-  </div>
-</div>
+  </main>
+</section>
 ```
 
 ## Observações
@@ -184,19 +324,34 @@ Saída esperada (HTML):
 ## Erros comuns
 
 ### Erro frequente 1: "Cores retornam vazio"
-**Problema**: `api.getColors()` retorna array vazio, seletor não renderiza.
-**Diagnóstico**: Nenhuma cor cadastrada na loja, ou API com erro.
-**Solução**: Verificar painel wBuy se cores foram cadastradas. Se sim, debugar com `{{ pr(api.getColors()) }}` para ver resposta real.
 
-### Erro frequente 2: "Código hexadecimal inválido"
-**Problema**: Cores retornam mas `cor.hex_code` não é código hex válido (ex: não começa com `#`).
-**Diagnóstico**: Campo pode ter nome diferente ou valor em formato não-esperado.
-**Solução**: Debugar com `{{ pr(cor) }}` para ver estrutura exata. Usar nome correto do campo (pode ser `hex`, `color_code`, `hex_code`, etc).
+**Problema**: `api.getColors()` retorna array vazio `[]`, seletor não renderiza.
+**Diagnóstico**: Nenhuma cor cadastrada na loja, ou todas as cores estão desativadas.
+**Solução**: Verificar painel wBuy se cores foram cadastradas e ativas. Debugar com `{{ pr(api.getColors()) }}` para ver resposta. Verificar campo `ativo: 1` em cada cor.
 
-### Erro frequente 3: "Cores de um produto não correspondem às cores da API"
-**Problema**: Produto tem cor cadastrada que não aparece em `getColors()`.
-**Diagnóstico**: Cores podem estar deletadas ou desativadas na loja.
-**Solução**: Filtrar por produto específico: usar `productGet(id)` para ver quais cores estão associadas àquele produto, depois comparar com `getColors()`.
+### Erro frequente 2: "Acesso a campo que não existe"
+
+**Problema**: Tentando acessar `cor.hex_code` ou `cor.color_code` gera undefined no template.
+**Diagnóstico**: Os campos reais retornados são `id`, `nome`, `cor1`, `cor2`, `ativo`, `tipo`, `grupo_id`, `grupo_cores`, `total_produtos`.
+**Solução**: Usar os nomes corretos: `{{ cor.cor1 }}` para código hex da cor principal, `{{ cor.nome }}` para nome, `{{ cor.total_produtos }}` para quantidade de produtos.
+
+### Erro frequente 3: "Cores desativadas aparecem no filtro"
+
+**Problema**: Cores com `ativo: 0` são retornadas e aparecem no seletor de filtro.
+**Diagnóstico**: `api.getColors()` retorna todas as cores, mesmo inativas.
+**Solução**: Filtrar apenas cores ativas no template:
+
+```twig
+{% for cor in api.getColors({ativo: 1}) %}
+  {# Renderizar cor #}
+{% endfor %}
+```
+
+### Erro frequente 4: "Campo `total_produtos` sempre zero ou vazio"
+
+**Problema**: Filtro mostra "(0)" ou "(undefined)" mesmo existindo produtos com essa cor.
+**Diagnóstico**: Valor não é calculado automaticamente pela API — depende de quantos produtos estão marcados com aquela cor.
+**Solução**: Esse campo reflete apenas produtos que têm a cor cadastrada. Se sempre retorna 0, verificar se os produtos foram vinculados corretamente às cores no painel.
 
 ## Veja também
 

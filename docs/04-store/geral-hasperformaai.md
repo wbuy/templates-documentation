@@ -2,51 +2,56 @@
 title: "geral.hasPerformaAI"
 slug: "geral-hasperformaai"
 doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre geral.hasPerformaAI."
-tags: ["placeholder", "pendente"]
-related: []
+summary: "Recurso responsável por mostrar vitrines dinâmicas do serviço PerformaAI quando o lojista tem contrato ativo."
+tags:
+  - geral
+  - performaai
+  - vitrines-dinâmicas
+  - ia
+related:
+  - 04-store/visao-geral-store.md
+  - 04-store/showcaseproduct.md
 ---
 
 ## O que faz
 
-[Escrever descrição do objetivo e propósito - máx 3 parágrafos]
+Recurso responsável por mostrar vitrines dinâmicas do serviço PerformaAI quando o lojista tem contrato com eles.
 
 ## Sintaxe
 
-```
-[Documentar sintaxe, parâmetros, retornos]
+```twig
+{% if geral.hasPerformaAI %}
+	<performa></performa>
+{% endif %}
 ```
 
 ## Quando usar
 
-- [Casos ideais]
-- [Pré-condições]
-- [Limitações]
+- Quando o lojista tem contrato ativo com PerformaAI
+- Para exibir vitrines dinâmicas geradas por IA
+- Em seções de destaque de produtos
 
 ## Exemplo
 
-```
-[Exemplo funcional mínimo]
+```twig
+{% if geral.hasPerformaAI %}
+	<section class="performa-vitrines">
+		<performa></performa>
+	</section>
+{% endif %}
 ```
 
 Saída esperada:
 ```
-[Output esperado]
+Vitrines dinâmicas renderizadas pelo componente PerformaAI
 ```
 
 ## Observações
 
-- [Compatibilidade]
-- [Performance]
-- [Comportamento em cache]
-- [Impacto SEO/Mobile]
-
-## Erros comuns
-
-### Erro frequente 1
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+- Esta é uma verificação booleana que retorna verdadeiro ou falso
+- O componente `<performa></performa>` gerencia sua própria renderização
+- As vitrines são geradas dinamicamente de forma inteligente
+- Não há parâmetros a serem passados para esta verificação
 
 ### Erro frequente 2
 **Problema**: [Descrição]

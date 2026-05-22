@@ -29,6 +29,9 @@ Ideal para renderizar o nível mais profundo de navegação, filtragem de tercei
 {# Sem parâmetros - retorna todas as categorias de nível 3 #}
 {% set tercnivel = api.categoryGetLevel3() %}
 
+{# Para retornar as subcategorias de uma categoria específica #}
+{% set subcategorias = api.categoryGetLevel2({categoria_id: 1}) %}
+
 {# Com parâmetros de consulta - filtra resultados #}
 {% set tercnivel = api.categoryGetLevel3({id:'1', q:'eletronicos'}) %}
 ```
@@ -45,10 +48,47 @@ Todos os parâmetros possíveis estão documentados na [API Postman](https://doc
 ### Retorno
 
 Retorna um array com objetos de categoria nível 3. Cada objeto contém:
-- ID, nome, slug, descrição
+
+- Dados da categoria (`id`, `nome`, `url`, `ordenar` etc)
 - Referência à categoria pai (parent_id, breadcrumb)
 - URLs e metadados
 - **Sem categorias aninhadas abaixo** (nível 3 é o mais profundo)
+
+#### Exemplo de estrutura retornada
+
+```json
+[
+  {
+    "id": 343564,
+    "tipo": 2,
+    "tabela": 1,
+    "nome": "coleções",
+    "url": "colecoes",
+    "icone_tipo": 1,
+    "icone": "",
+    "cor": "",
+    "posicao": 0,
+    "menu": 1,
+    "menu_mobile": 1,
+    "ativo": 1,
+    "oculto": 0,
+    "ordenar": "lancamento",
+    "categoria_link": "http://www.loja.com.br/link/da/categoria",
+    "google_category": "",
+    "categoria_target": "_self",
+    "total_produtos": 0,
+    "filtro_preco": 50,
+    "subtitulo": "",
+    "seo_title": "",
+    "seo_description": "",
+    "seo_metatags": "",
+    "seo_info": "",
+    "seo_scripts": "",
+    "total_level2": 0,
+    "total_produtos_ativos": 0
+  },
+]
+```
 
 ## Quando usar
 

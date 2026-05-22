@@ -1,52 +1,69 @@
 ---
 title: "store.getTextTop()"
 slug: "store-gettexttop"
-doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre store.getTextTop()."
-tags: ["placeholder", "pendente"]
-related: []
+doc_type: "reference"
+summary: "Método que retorna texto customizado configurável para exibição no topo das páginas de produtos com suporte a HTML."
+tags:
+  - store
+  - texto
+  - customização
+  - mensagens
+related:
+  - 04-store/visao-geral-store.md
+  - 04-store/store-productdetail.md
 ---
 
 ## O que faz
 
-[Escrever descrição do objetivo e propósito - máx 3 parágrafos]
+Retorna um texto customizado configurado para exibição no topo das páginas de produtos. Este texto pode ser usado para mensagens de promoção, avisos ou informações gerais.
 
 ## Sintaxe
 
-```
-[Documentar sintaxe, parâmetros, retornos]
+```twig
+{% set texto_topo = store.getTextTop() %}
 ```
 
 ## Quando usar
 
-- [Casos ideais]
-- [Pré-condições]
-- [Limitações]
+- Para exibir mensagens no topo de página de produtos
+- Para avisos ou informações de promoção
+- Em textos dinâmicos configurados no painel
+- Para comunicações com cliente
 
 ## Exemplo
 
-```
-[Exemplo funcional mínimo]
+```twig
+{% set texto_topo = store.getTextTop() %}
+{% if texto_topo.ativo %}
+<div class="top-message alert">
+	{{ texto_topo.conteudo|raw }}
+</div>
+{% endif %}
 ```
 
 Saída esperada:
 ```
-[Output esperado]
+Mensagem de promoção ou aviso exibida no topo
 ```
+
+## Retorno dos dados
+
+**ativo** (bool) - Se o texto está ativo para exibição
+
+**conteudo** (string) - Conteúdo do texto (pode conter HTML)
+
+**titulo** (string) - Título opcional do texto
+
+## Parâmetros de consulta
+
+Nenhum parâmetro obrigatório.
 
 ## Observações
 
-- [Compatibilidade]
-- [Performance]
-- [Comportamento em cache]
-- [Impacto SEO/Mobile]
-
-## Erros comuns
-
-### Erro frequente 1
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+- Texto customizável no painel de controle
+- Suporta HTML no conteúdo
+- Étimo para comunicações dincâmicas
+- Pode ser ligado/desligado conforme necessidade
 
 ### Erro frequente 2
 **Problema**: [Descrição]

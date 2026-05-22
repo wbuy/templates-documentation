@@ -1,52 +1,92 @@
 ---
 title: "store.productDetail()"
 slug: "store-productdetail"
-doc_type: "concept"
-summary: "Placeholder IA-ready. Preencher com conteúdo definitivo sobre store.productDetail()."
-tags: ["placeholder", "pendente"]
-related: []
+doc_type: "reference"
+summary: "Método que retorna dados completos e detalhados de um produto específico incluindo galeria, variações e avaliações."
+tags:
+  - store
+  - produtos
+  - detalhe
+  - página-produto
+related:
+  - 04-store/visao-geral-store.md
+  - 04-store/producttobox.md
 ---
 
 ## O que faz
 
-[Escrever descrição do objetivo e propósito - máx 3 parágrafos]
+Retorna dados completos e detalhados de um produto específ ico. Este método é essencial para páginas de detalhe de produto, oferecendo todas as informações necessárias para apresentação completa.
 
 ## Sintaxe
 
-```
-[Documentar sintaxe, parâmetros, retornos]
+```twig
+{% set produto = store.productDetail({id: product_id}) %}
+{# ou via extra para páginas dinâmicas #}
+{% set produto = store.productDetail() %}
 ```
 
 ## Quando usar
 
-- [Casos ideais]
-- [Pré-condições]
-- [Limitações]
+- Em páginas de detalhe de produto
+- Para exibir informações completas (descrição, galeria, variações)
+- Para mostrar avaliações e comentários
+- Em páginas de produto com cart dinâmico
 
 ## Exemplo
 
-```
-[Exemplo funcional mínimo]
+```twig
+{% set produto = store.productDetail() %}
+{% if produto %}
+<div class="product-detail">
+	<div class="product-gallery">
+		{% for foto in produto.fotos %}
+		<img src="{{ foto.url }}" alt="{{ produto.titulo }}" />
+		{% endfor %}
+	</div>
+	<div class="product-info">
+		<h1>{{ produto.titulo }}</h1>
+		<p class="description">{{ produto.descricao|raw }}</p>
+		<span class="preco">R$ {{ produto.preco }}</span>
+	</div>
+</div>
+{% endif %}
 ```
 
 Saída esperada:
 ```
-[Output esperado]
+Página completa de detalhe do produto com galeria
 ```
+
+## Retorno dos dados
+
+**id** (int) - ID do produto
+
+**titulo** (string) - Título/nome
+
+**descricao** (string) - Descrição detalhada (HTML)
+
+**preco** (float) - Preço normal
+
+**preco_desconto** (float) - Preço com desconto
+
+**fotos** (array) - Galeria de imagens do produto
+
+**variações** (array) - Variações (cores, tamanhos, etc)
+
+**avaliacoes** (array) - Comentários e avaliações
+
+## Parâmetros de consulta
+
+| Parâmetro | Padrão | Descrição |
+|-----------|---------|-------------|
+| id | extra.id | ID do produto (via parâmetro ou extra) |
 
 ## Observações
 
-- [Compatibilidade]
-- [Performance]
-- [Comportamento em cache]
-- [Impacto SEO/Mobile]
-
-## Erros comuns
-
-### Erro frequente 1
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+- Retorna dados mais completos que store.productToBox()
+- Inclui HTML na descrição (usar raw no Twig)
+- Essencial para páginas de detalhe
+- Inclui dados de avaliações e comentarios
 
 ### Erro frequente 2
 **Problema**: [Descrição]
