@@ -22,7 +22,7 @@ O componente busca automaticamente os produtos que foram configurados como relac
 **Parâmetros:**
 
 | Parâmetro | Tipo | Obrigatório | Descrição |
-|-----------|------|-------------|-----------|
+| ----------- | ------ | ------------- | ----------- |
 | `data-modulo` | string | Sim | Deve ser sempre `"product-grouper"` |
 | `data-pid` | int | Sim | ID do produto da página atual |
 | `loading` | bool | Não | Mostra loading enquanto processa (padrão: false) |

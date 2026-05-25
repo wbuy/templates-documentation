@@ -21,13 +21,13 @@ Este recurso permite exibir o bloco "Compre Junto" na página de detalhes de um 
 **Parâmetros:**
 
 | Parâmetro | Tipo | Obrigatório | Descrição |
-|-----------|------|-------------|-----------|
+| ------------- | ---- | ----------- | --------- |
 | `produto_id` | int | Sim | ID do produto que está sendo visualizado |
 
 **Retorno:**
 
 | Campo | Tipo | Descrição |
-|-------|------|-----------|
+|-------|------|---------------------- |
 | saída | string (raw HTML) | HTML formatado com o bloco Compre Junto pronto para renderizar |
 
 ## Quando usar
@@ -47,6 +47,7 @@ Este recurso permite exibir o bloco "Compre Junto" na página de detalhes de um 
 ```
 
 Saída esperada:
+
 ```html
 <!-- HTML da estrutura Compre Junto com produtos, valores e botões de compra -->
 <div class="bloco-compre-junto">
@@ -77,6 +78,7 @@ Saída esperada:
 **Solução**: Verificar que está usando `{{ extra.id }}` ou outra variável que contenha o ID correto do produto da página atual
 
 ### Erro frequente 2
+
 **Problema**: [Descrição]
 **Diagnóstico**: [Como identificar]
 **Solução**: [Passo a passo]
