@@ -9,6 +9,7 @@ Biblioteca de modelos completos e prontos para uso. Inclui páginas inteiras, es
 Vide arquivo manifest.json para ordem completa (38 entradas).
 
 **Início recomendado:**
+
 1. **visao-geral-modelos.md** — Overview da biblioteca
 2. **pagina-inicial-modelo-01.md** — Modelo de homepage
 3. **topo-modelo-01.md** — Estrutura do topo

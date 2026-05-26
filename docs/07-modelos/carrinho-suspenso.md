@@ -309,17 +309,6 @@ Crie um novo widget com o nome exato `new-suspended-cart`. Insira o seguinte HTM
   });
 </script>
 ```
-    </div>
-</div>
-{% endif %}
-
-<script>
-    $(function(){
-        $('header .cart .sup').html('{{ carrinho.total_items }}');
-        $('header .cart-total .cart-total-label').html('R${{ valores.total|valor }}');
-    });
-</script>
-```
 
 ## Quando usar
 
