@@ -32,6 +32,14 @@ O método `store.dynamicPages()` recupera páginas customizáveis criadas no pai
 - `text_upper` (boolean) — true para maiúsculas
 - `return_simple` (boolean) — true para array puro
 
+### Retorno
+
+```json
+[
+  "<a href=\"/p/politica-de-privacidade\">Política de Privacidade</a>"
+]
+```
+
 ## Quando usar
 
 - Criar menu de links institucionais dinâmico

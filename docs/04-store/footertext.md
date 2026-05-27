@@ -30,6 +30,15 @@ O método `store.footerText()` recupera textos personalizados para serem exibido
 
 **Retorna**: Objeto com duas propriedades string (HTML raw)
 
+### Retorno
+
+```json
+{
+  "base": "",
+  "rodape": ""
+}
+```
+
 ## Quando usar
 
 - Exibir texto/conteúdo na base da página

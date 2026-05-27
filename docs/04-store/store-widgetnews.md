@@ -25,6 +25,16 @@ Disponibiliza um widget de notícias/blog configurado para a loja virtual. Este 
 {% set noticias = store.widgetNews({limit: '5'}) %}
 ```
 
+### Retorno
+
+```json
+{
+  "title": "",
+  "subtitle1": "",
+  "subtitle2": ""
+}
+```
+
 ## Quando usar
 
 - Para exibir últimas notícias/blog posts
@@ -84,12 +94,19 @@ Lista de últimas notícias/blog posts
 - Suporta filtros de destaque
 - Dados ordenados por data de publicação
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Renderizar sem dados configurados
+**Problema**: Widget aparece vazio.
+**Diagnóstico**: `widgetNews.title` ou subtítulos vazios.
+**Solução**: Condicionar a renderização quando houver dados no painel.
+
+### Erro 2: Não validar entrada de e-mail
+**Problema**: Formulário aceita e-mails inválidos.
+**Diagnóstico**: Cadastros com valores incorretos.
+**Solução**: Manter `type="email"` e `required` no input.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Blog Posts](04-store/blogposts.md)
+- [Visão geral store](04-store/visao-geral-store.md)

@@ -25,6 +25,85 @@ Retorna dados completos e detalhados de um produto específ ico. Este método é
 {% set produto = store.productDetail() %}
 ```
 
+### Retorno
+
+```json
+{
+  "product_id": 0,
+  "sku": "",
+  "category": {
+    "cl1": {
+      "id": 0,
+      "nome": "",
+      "url": "",
+      "tabela": 0
+    },
+    "cl2": {
+      "id": 0,
+      "nome": "",
+      "url": ""
+    },
+    "cl3": {
+      "id": 0,
+      "nome": "",
+      "url": ""
+    }
+  },
+  "breadcrumbs": [
+    {
+      "page": "",
+      "url": ""
+    }
+  ],
+  "photos_type": 0,
+  "photos": [
+    {
+      "cor_id": 0,
+      "foto": "",
+      "foto_mini": "",
+      "cor_count": 0,
+      "video": "",
+      "video_raw": ""
+    }
+  ],
+  "badge": "",
+  "product": "",
+  "code": "",
+  "description": "",
+  "specification": "",
+  "items": "",
+  "warranty": "",
+  "video": {
+    "foto": "",
+    "foto_mini": "",
+    "video": "",
+    "video_raw": ""
+  },
+  "brand": {
+    "id": 0,
+    "nome": "",
+    "url": ""
+  },
+  "likes": 0,
+  "rating": {
+    "votes": {
+      "total": 0,
+      "pontos": 0
+    },
+    "percent": 0.0
+  },
+  "allow_comments": false,
+  "attachments": [
+    {
+      "id": 0,
+      "titulo": "",
+      "arquivo": "",
+      "filename_download": ""
+    }
+  ]
+}
+```
+
 ## Quando usar
 
 - Em páginas de detalhe de produto
@@ -88,12 +167,19 @@ Página completa de detalhe do produto com galeria
 - Essencial para páginas de detalhe
 - Inclui dados de avaliações e comentarios
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Esquecer `|raw` em campos HTML
+**Problema**: Descrição, selos ou vídeo aparecem como texto.
+**Diagnóstico**: Tags HTML visíveis no front.
+**Solução**: Usar `|raw` em campos como `description`, `badge` e `video_raw`.
+
+### Erro 2: Chamar sem ID em páginas fora do detalhe
+**Problema**: Retorno vazio ao usar fora da página de produto.
+**Diagnóstico**: `extra.id` não existe.
+**Solução**: Passar `id` explicitamente: `store.productDetail({id: product_id})`.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Product To Box](04-store/producttobox.md)
+- [Visão geral store](04-store/visao-geral-store.md)

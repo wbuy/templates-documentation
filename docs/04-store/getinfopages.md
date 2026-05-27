@@ -29,7 +29,15 @@ Este método é ideal para construir menus de rodapé ou barras laterais que lis
 {% endfor %}
 ```
 
-**Retorno**: Array de objetos contendo `nome`, `url`, `slug` e outras propriedades da página.
+**Retorno**: Array de strings com HTML pronto para links das páginas.
+
+### Retorno
+
+```json
+[
+  "<a href=\"/p/sobre-nos\">Sobre Nós</a>"
+]
+```
 
 ## Quando usar
 

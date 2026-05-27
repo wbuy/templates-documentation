@@ -23,6 +23,46 @@ Retorna as categorias formatadas especificamente para uso em menus de navegaçã
 {% set menu_categorias = store.categoriesMenu() %}
 ```
 
+### Retorno
+
+```json
+[
+  {
+    "id": 0,
+    "tabela": 0,
+    "nome": "",
+    "url": "",
+    "target": "",
+    "icone_tipo": 0,
+    "icone": "",
+    "cor": "",
+    "posicao": 0,
+    "menu": false,
+    "ativo": false,
+    "ordenar": "",
+    "total_produtos": 0,
+    "subs": [
+      {
+        "id": 0,
+        "nome": "",
+        "url": "",
+        "posicao": 0,
+        "total_produtos": 0,
+        "subs": [
+          {
+            "id": 0,
+            "nome": "",
+            "url": "",
+            "posicao": 0,
+            "total_produtos": 0
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
 ## Quando usar
 
 - Para exibir menu de categorias na navegação principal
@@ -75,12 +115,19 @@ Nenhum parâmetro obrigatório.
 - Suporta árvore hierárquica de níveis
 - Excelente para megamenus e navegações complexas
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Esquecer `|raw` em ícone ou banner
+**Problema**: Ícones/banners aparecem como texto.
+**Diagnóstico**: Tags HTML visíveis no menu.
+**Solução**: Renderizar `{{ cat.icone_categoria|raw }}` e `{{ cat.banner|raw }}` quando existirem.
+
+### Erro 2: Não validar subcategorias
+**Problema**: Submenu vazio ou quebrado.
+**Diagnóstico**: `cat.subs|length` igual a 0.
+**Solução**: Condicionar a renderização de submenus com `if cat.subs|length >= 1`.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Store Categories](04-store/store-categories.md)
+- [Visão geral store](04-store/visao-geral-store.md)

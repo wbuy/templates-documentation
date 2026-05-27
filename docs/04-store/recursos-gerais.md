@@ -90,7 +90,7 @@ Saída esperada:
 - Valores são estabelecidos no servidor durante renderização do template
 - Parâmetros GET são acessados via array `extra`
 - Configurações especiais (flags) são definidas pelo lojista no painel administrativo
-- Funções PHP como `pr()`, `plural()`, `separa()` estão em `02-twig`
+- Funções PHP como `pr()`, `plural()`, `separa()` estão em [`02-twig`](../02-twig/)
 - Cache pode afetar valores globais; sempre verificar em tempo de debug
 
 ## Erros comuns

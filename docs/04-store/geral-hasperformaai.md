@@ -25,6 +25,12 @@ Recurso responsável por mostrar vitrines dinâmicas do serviço PerformaAI quan
 {% endif %}
 ```
 
+### Retorno
+
+```json
+false
+```
+
 ## Quando usar
 
 - Quando o lojista tem contrato ativo com PerformaAI
@@ -53,12 +59,19 @@ Vitrines dinâmicas renderizadas pelo componente PerformaAI
 - As vitrines são geradas dinamicamente de forma inteligente
 - Não há parâmetros a serem passados para esta verificação
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Renderizar sem validar `geral.hasPerformaAI`
+**Problema**: O componente é exibido quando não há contrato ativo.
+**Diagnóstico**: A vitrine não carrega ou fica vazia.
+**Solução**: Envolver o bloco com `{% if geral.hasPerformaAI %}`.
+
+### Erro 2: Não prever fallback quando o recurso está indisponível
+**Problema**: A área de vitrine fica vazia quando o recurso não está ativo.
+**Diagnóstico**: Seções sem conteúdo em lojas sem PerformaAI.
+**Solução**: Adicionar fallback visual ou ocultar a seção quando `geral.hasPerformaAI` for false.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Showcase Product](04-store/showcaseproduct.md)
+- [Visão geral store](04-store/visao-geral-store.md)

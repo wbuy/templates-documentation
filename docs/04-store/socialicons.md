@@ -23,6 +23,27 @@ Disponibiliza como retorno os ícones de redes sociais configuradas para a loja.
 {% set redes = store.socialIcons() %}
 ```
 
+### Retorno
+
+```json
+{
+  "items": [
+    {
+      "id": 0,
+      "tipo": 0,
+      "icone": "",
+      "titulo": "",
+      "url": "",
+      "cor_fundo": "",
+      "cor_icone": ""
+    }
+  ],
+  "raw": [
+    ""
+  ]
+}
+```
+
 ## Quando usar
 
 - Para exibir ícones de redes sociais no footer
@@ -34,12 +55,10 @@ Disponibiliza como retorno os ícones de redes sociais configuradas para a loja.
 
 ```twig
 {% set redes = store.socialIcons() %}
-{% if redes.items %}
+{% if redes.raw|length > 0 %}
 <div class="social-icons">
-	{% for rede in redes.items %}
-	<a href="{{ rede.url }}" target="_blank" title="{{ rede.nome }}">
-		<i class="icon-{{ rede.tipo }}"></i>
-	</a>
+	{% for item in redes.raw %}
+		{{ item|raw }}
 	{% endfor %}
 </div>
 {% endif %}
@@ -53,10 +72,14 @@ Links das redes sociais com ícones
 ## Retorno dos dados
 
 **items** - Array de redes sociais
-- `items[x].nome` (string) - Nome da rede (Facebook, Instagram, etc)
-- `items[x].tipo` (string) - Tipo/código da rede
-- `items[x].url` (string) - URL do perfil
-- `items[x].icone` (string) - URL/classe do ícone
+- `items[x].tipo` (int) - 1 = ícone interno; 2 = ícone externo
+- `items[x].icone` (string)
+- `items[x].titulo` (string)
+- `items[x].url` (string)
+- `items[x].cor_fundo` (string)
+- `items[x].cor_icone` (string)
+
+**raw** - Array de itens prontos para renderização no template
 
 ## Parâmetros de consulta
 
@@ -69,12 +92,19 @@ Nenhum parâmetro obrigatório.
 - Suporte a múltiplas redes sociais
 - URLs já vem formatadas e prontas
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Esquecer `|raw` na saída
+**Problema**: HTML dos ícones aparece como texto.
+**Diagnóstico**: Tags visíveis no layout.
+**Solução**: Renderizar `{{ item|raw }}` ao iterar `redes.raw`.
+
+### Erro 2: Não validar retorno vazio
+**Problema**: Área de redes sociais sem conteúdo.
+**Diagnóstico**: `redes.raw|length` igual a 0.
+**Solução**: Condicionar a renderização com `if redes.raw|length > 0`.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Widget Facebook](04-store/widgetfacebook.md)
+- [Visão geral store](04-store/visao-geral-store.md)

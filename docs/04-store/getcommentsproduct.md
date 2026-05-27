@@ -31,6 +31,25 @@ O método `store.getCommentsProduct(productId)` recupera todos os comentários e
 **Parâmetro**: `limit` (string, padrão: 3) — Quantidade de comentários a retornar
 **Filtro**: `ativo` (número, padrão: 1) — 1 para ativos, 0 para inativos
 
+### Retorno
+
+```json
+{
+  "total": 0,
+  "items": [
+    {
+      "id": 0,
+      "nome": "",
+      "email": "",
+      "comentario": "",
+      "data": "YYYY-MM-DD HH:MM:SS",
+      "voto": 0,
+      "estrelas": ""
+    }
+  ]
+}
+```
+
 ## Quando usar
 
 - Exibir avaliações de um produto

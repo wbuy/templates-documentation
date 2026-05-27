@@ -194,13 +194,20 @@ Galeria de 4 produtos últimos lançamentos com informações completas
 - Suporta múltiplas ordenações
 - Performance otimizada para grandes listas
 
-### Erro frequente 2
+## Erros comuns
 
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+### Erro 1: Usar produtos fora do retorno de `productToBox`
+**Problema**: O box padrão quebra por falta de campos.
+**Diagnóstico**: Produto não possui estrutura completa esperada.
+**Solução**: Usar itens de `produtosBox.data` para renderização.
+
+### Erro 2: Não validar lista vazia
+**Problema**: Layout com seções sem produtos.
+**Diagnóstico**: `produtosBox.total` é 0.
+**Solução**: Verificar `if produtosBox.total > 0` antes do loop.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Product Box Default](04-store/productboxdefault.md)
+- [Page Products](04-store/pageproducts.md)
+- [Visão geral store](04-store/visao-geral-store.md)

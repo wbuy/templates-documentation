@@ -274,13 +274,20 @@ Lista de produtos com filtros, categorias e paginação
 - Suporta todos os parâmetros da API de produtos
 - A variável `page` só está disponível em algumas páginas específicas
 
-### Erro frequente 2
+## Erros comuns
 
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+### Erro 1: Ignorar a variável `extra`
+**Problema**: Filtros e paginação não funcionam.
+**Diagnóstico**: `page`, `cor` e `order` não chegam ao método.
+**Solução**: Passar `extra.page`, `extra.cor` e `extra.order` na chamada.
+
+### Erro 2: Não validar paginação
+**Problema**: Links de página quebrados.
+**Diagnóstico**: `conteudo.pagination` vazio.
+**Solução**: Verificar `conteudo.pagination.page_total` antes de renderizar.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Product To Box](04-store/producttobox.md)
+- [Product Box Default](04-store/productboxdefault.md)
+- [Visão geral store](04-store/visao-geral-store.md)

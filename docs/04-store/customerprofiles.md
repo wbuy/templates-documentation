@@ -32,6 +32,22 @@ O método `store.customerProfiles()` recupera perfis criados pelo cliente logado
 
 **Retorna**: Array com perfis do cliente (se logado) ou null/vazio (se não-logado)
 
+### Retorno
+
+```json
+[
+  {
+    "id": 0,
+    "combinacao_id": 0,
+    "titulo": "",
+    "nascimento": "YYYY-MM-DD",
+    "created": "YYYY-MM-DD HH:MM:SS",
+    "url_produtos": "",
+    "idade": 0
+  }
+]
+```
+
 ## Quando usar
 
 - Exibir lista de perfis criados pelo cliente

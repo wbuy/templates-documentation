@@ -27,6 +27,20 @@ Método disponível apenas em lojas do tipo matriz (multiloja). Retorna lista de
 
 Parâmetros: `cid`, `sid`, `order`
 
+### Retorno
+
+```json
+[
+  {
+    "nome": "",
+    "cidade": "",
+    "uf": "",
+    "url_interna_matriz": "",
+    "logo": ""
+  }
+]
+```
+
 ## Quando usar
 
 - Exibir carrossel de fornecedores/filiais

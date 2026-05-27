@@ -31,6 +31,26 @@ Inclui dados como nome fantasia, razão social, CNPJ, endereços completos, múl
 
 **Retorno**: Objeto contendo chaves como `nome_fantasia`, `cnpj`, `endereco`, `telefone`, `redes_sociais` (array), etc.
 
+### Retorno
+
+```json
+{
+  "id": 0,
+  "loja": "",
+  "razao": "",
+  "doc1": "",
+  "cep": "",
+  "endereco": "",
+  "endnum": "",
+  "complemento": "",
+  "bairro": "",
+  "cidade": "",
+  "uf": "",
+  "telefone": "",
+  "celular": ""
+}
+```
+
 ## Quando usar
 
 - Inserir o CNPJ e Razão Social no rodapé (exigência legal).

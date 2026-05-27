@@ -24,6 +24,16 @@ Disponibiliza um widget de Instagram configurado para a loja virtual. Este méto
 {% set instagram = store.widgetInstagram() %}
 ```
 
+### Retorno
+
+```json
+{
+  "token": "",
+  "username": "",
+  "limit": ""
+}
+```
+
 ## Quando usar
 
 - Para exibir feed de Instagram na loja
@@ -71,13 +81,20 @@ Nenhum parâmetro obrigatório.
 - Ideal para integração social
 - Suporta customização de layout
 
-### Erro frequente 2
+## Erros comuns
 
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+### Erro 1: Não validar `instagram.token`
+**Problema**: O feed não carrega.
+**Diagnóstico**: `instagram.token` vazio.
+**Solução**: Renderizar o bloco apenas quando `instagram.token` estiver definido.
+
+### Erro 2: Não carregar o script do Instafeed
+**Problema**: A seção aparece, mas sem posts.
+**Diagnóstico**: Console com erro de `Instafeed is not defined`.
+**Solução**: Incluir o script `instafeed2.min.js` antes de executar.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Widget Facebook](04-store/widgetfacebook.md)
+- [Social Icons](04-store/socialicons.md)
+- [Visão geral store](04-store/visao-geral-store.md)

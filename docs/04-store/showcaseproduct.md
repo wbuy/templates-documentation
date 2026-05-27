@@ -25,6 +25,24 @@ Retorna dados de vitrines (showcases) de produtos criadas para destaque especial
 {% set vitrines = store.showcaseProduct({id: 1, limit: '6'}) %}
 ```
 
+### Retorno
+
+```json
+[
+  {
+    "vitrine": {
+      "id": 0,
+      "titulo": "",
+      "data_limite": "YYYY-MM-DD",
+      "tipo": "1",
+      "banner_superior": "",
+      "banner_inferior": ""
+    },
+    "produtos": []
+  }
+]
+```
+
 ## Quando usar
 
 - Para exibir vitrines de produtos em destaque
@@ -35,19 +53,25 @@ Retorna dados de vitrines (showcases) de produtos criadas para destaque especial
 ## Exemplo
 
 ```twig
-{% set vitrines = store.showcaseProduct({limit: '8'}) %}
-{% if vitrines.items %}
+{% set vitrines = store.showcaseProduct() %}
+{% for vitrine in vitrines %}
 <section class="showcase">
-	<h2>{{ vitrines.titulo }}</h2>
+	{% if vitrine.vitrine.banner_superior %}
+		{{ vitrine.vitrine.banner_superior|raw }}
+	{% endif %}
+	<h2>{{ vitrine.vitrine.titulo }}</h2>
 	<div class="showcase-grid">
-		{% for produto in vitrines.items %}
+		{% for produto in vitrine.produtos %}
 		<div class="showcase-item">
 			{{ store.productBoxDefault(produto) }}
 		</div>
 		{% endfor %}
 	</div>
+	{% if vitrine.vitrine.banner_inferior %}
+		{{ vitrine.vitrine.banner_inferior|raw }}
+	{% endif %}
 </section>
-{% endif %}
+{% endfor %}
 ```
 
 Saída esperada:
@@ -57,12 +81,17 @@ Vitrine de produtos com título e produtos formatados
 
 ## Retorno dos dados
 
-**items** - Array de produtos da vitrine
-- Dados completos de produto (similar a store.productToBox)
+Retorna uma matriz de vitrines configuradas.
 
-**titulo** (string) - Título da vitrine
+**[x].vitrine** - Dados da vitrine
+- `vitrine.id` (int)
+- `vitrine.titulo` (string)
+- `vitrine.data_limite` (date)
+- `vitrine.tipo` (string) - 1 = Carrossel; 2 = Livre
+- `vitrine.banner_superior` (string raw)
+- `vitrine.banner_inferior` (string raw)
 
-**descricao** (string) - Descrição da vitrine
+**[x].produtos** - Produtos da vitrine (mesma estrutura de `store.productToBox()`)
 
 ## Parâmetros de consulta
 
@@ -78,12 +107,19 @@ Vitrine de produtos com título e produtos formatados
 - Ideais para criar seções templáticas
 - Suportam título e descrição personalizados
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Esquecer `|raw` nos banners
+**Problema**: O HTML do banner aparece como texto.
+**Diagnóstico**: Tags renderizadas no layout.
+**Solução**: Usar `{{ vitrine.vitrine.banner_superior|raw }}` e `{{ vitrine.vitrine.banner_inferior|raw }}`.
+
+### Erro 2: Não validar vitrines vazias
+**Problema**: Seções vazias na página inicial.
+**Diagnóstico**: Retorno sem itens.
+**Solução**: Condicionar o bloco quando `vitrines|length > 0`.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Product To Box](04-store/producttobox.md)
+- [Visão geral store](04-store/visao-geral-store.md)

@@ -35,6 +35,12 @@ readListener('nome_do_evento', function(dados) {
 - `'nome_do_evento'` (string) — Nome do evento a monitorar
 - `função(dados)` — Callback executado quando o evento dispara
 
+### Retorno
+
+```json
+0
+```
+
 ## Quando usar
 
 - Atualizar quantidade de itens no carrinho em tempo real

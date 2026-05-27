@@ -25,12 +25,63 @@ O método `store.cart()` recupera todos os dados do carrinho de compras do usuá
 {% set carrinho = store.cart() %}
 ```
 
-**Retorna**: Objeto com estrutura aninhada contendo:
-- `total_product` (int) — Total de produtos
-- `total_items` (int) — Total de itens (quantidade)
-- `cart` (object) — Dados detalhados do carrinho
-  - `items[]` (array) — Lista de produtos
-  - `amount` (object) — Totalizações
+### Retorno
+
+```json
+{
+  "total_product": 0, // Quantidade de produtos adicionados ao carrinho
+  "total_items": 0, // Quantidade de itens adicionados ao carrinho
+  "cart": {
+    "items": [ // Matriz de itens adicionados ao carrinho
+      {
+        "sku": "",
+        "pid": 0,
+        "url_relative": "",
+        "foto": "",
+        "produto": "",
+        "cor": "",
+        "cor_info": {
+          "cor1": "#hex",
+          "cor2": "#hex",
+          "img": "" // URL
+        },
+        "variacao": "",
+        "variacao_raw": "",
+        "prazo_entrega": "",
+        "prazo_entrega_raw": "",
+        "compra_minima": "",
+        "compra_minima_raw": "",
+        "frete_gratis": "",
+        "frete_gratis_raw": "",
+        "promocao": "",
+        "promocao_valor": "",
+        "valor_unitario": "",
+        "tabela": "",
+        "quantidade_minima": "",
+        "quantidade_em_estoque": "",
+        "quantidade": "",
+        "valor_parcial": "",
+        "campo_adicional": "",
+        "kit_id": "",
+        "oculto": "",
+        "brinde": "",
+        "compra_aneis": "",
+        "compra_combo": ""
+      }
+    ],
+    "amount": { // Matriz de dados com os valores do carrinho
+      "subtotal": 0.0,
+      "discount": 0.0,
+      "freight": {
+        "valor": 0.0,
+        "prazo": "", // Prazo em dias úteis
+        "servico": ""
+      },
+      "total": 0.0
+    }
+  }
+}
+```
 
 ## Quando usar
 
@@ -73,6 +124,7 @@ O método `store.cart()` recupera todos os dados do carrinho de compras do usuá
 ```
 
 Saída esperada:
+
 ```html
 <div class="header-cart">
   <span class="qtd">2 itens</span>

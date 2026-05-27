@@ -35,6 +35,28 @@ Estas avaliações incluem o nome do cliente, a nota (geralmente de 1 a 5), o co
 
 **Retorno**: Array de objetos contendo dados do depoimento.
 
+### Retorno
+
+```json
+{
+  "items": [
+    {
+      "id": 0,
+      "pid": 0,
+      "nome": "",
+      "email": "",
+      "comentario": "",
+      "data": "YYYY-MM-DD HH:MM:SS",
+      "ip": "",
+      "voto": 0.0,
+      "produto": "",
+      "produto_url": ""
+    }
+  ],
+  "raw": ""
+}
+```
+
 ## Quando usar
 
 - Exibir depoimentos de clientes na página inicial (Home).

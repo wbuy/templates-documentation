@@ -29,6 +29,24 @@ O método `store.featuredIcon()` recupera alertas/badges de destaque configurado
 
 **Parâmetro**: `limit` (string) — Quantidade de alertas a retornar (padrão: 5)
 
+### Retorno
+
+```json
+[
+  {
+    "id": 0,
+    "nome": "",
+    "icone": "",
+    "icone_tipo": 0,
+    "cor_texto": "#000000",
+    "cor_icone": "#000000",
+    "cor_fundo": "#ffffff",
+    "link": "",
+    "target": ""
+  }
+]
+```
+
 ## Quando usar
 
 - Exibir seção de alertas/destaques na página

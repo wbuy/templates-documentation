@@ -35,6 +35,12 @@ Este método retorna um valor booleano (`true` ou `false`), permitindo que você
 - `true` — Acesso via dispositivo móvel
 - `false` — Acesso via desktop
 
+### Retorno
+
+```json
+false
+```
+
 ## Quando usar
 
 - Renderizar layouts diferentes para mobile vs desktop

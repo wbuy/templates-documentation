@@ -36,6 +36,10 @@ O método `store.getURLCheckoutTemp()` gera uma URL de checkout completa com tok
 <a href="{{ url }}">Adicionar ao Carrinho</a>
 ```
 
+### Retorno
+
+Retorna uma URL completa de checkout com token temporário para adicionar o item ao carrinho.
+
 ## Quando usar
 
 - Produtos customizados dinâmicos

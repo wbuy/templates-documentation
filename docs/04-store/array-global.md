@@ -32,6 +32,15 @@ Este array é essencial para determinar se a loja está em modo mostruário, se 
 
 **Tipos de retorno**: Geralmente booleanos e strings, dependendo da configuração.
 
+### Retorno
+
+```json
+{
+  "var_mostruario": false,
+  "var_bloquear_cadastros": false
+}
+```
+
 ## Quando usar
 
 - Verificar se loja está em modo mostruário (somente visualização)

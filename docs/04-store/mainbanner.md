@@ -25,6 +25,39 @@ Disponibiliza como retorno os banners principais (slides) da loja virtual. Este 
 {% set slides = store.mainBanner({titulo: 'Banner especial'}) %}
 ```
 
+### Retorno
+
+```json
+{
+  "items": [
+    {
+      "id": "",
+      "titulo": "",
+      "foto": "",
+      "foto_mobile": "",
+      "link": "",
+      "target": "",
+      "desktop_raw": "",
+      "mobile_raw": "",
+      "avancado": {
+        "texto": "",
+        "cor_texto": "#000000"
+      }
+    }
+  ],
+  "items_per_view": 0,
+  "raw": {
+    "desktop": [
+      ""
+    ],
+    "mobile": [
+      ""
+    ]
+  },
+  "width": "block"
+}
+```
+
 ## Quando usar
 
 - Na página inicial para exibir banners principais
@@ -95,12 +128,19 @@ Carrossel de banners responsivos (desktop/mobile)
 - É recomendado usar OWL Carousel para melhor apresentação
 - Suporta seções em formato block (100%) ou centralizado
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Esquecer `|raw` nos campos preparados
+**Problema**: HTML de banner aparece como texto.
+**Diagnóstico**: Tags renderizadas na tela.
+**Solução**: Usar `{{ slide.desktop_raw|raw }}` e `{{ slide.mobile_raw|raw }}`.
+
+### Erro 2: Renderizar sem validar retorno
+**Problema**: Carrossel vazio em lojas sem banners.
+**Diagnóstico**: Estrutura do slider aparece sem itens.
+**Solução**: Verificar `if slides.raw|length >= 1` antes de montar o HTML.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Publicity Banner](04-store/publicitybanner.md)
+- [Visão geral store](04-store/visao-geral-store.md)

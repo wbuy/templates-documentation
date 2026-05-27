@@ -25,6 +25,12 @@ Disponibiliza como retorno os dados prontos do Box do Produto na loja virtual. E
 {{ store.productBoxDefault(produto, {total_fotos: 2}) }}
 ```
 
+### Retorno
+
+```json
+"<div class=\"product-box\">...</div>"
+```
+
 ## Quando usar
 
 - Para exibir caixas de produtos de forma padronizada
@@ -73,12 +79,19 @@ Este método retorna HTML já renderizado com a caixa do produto formatada com:
 - Segue o layout padrão definido no painel de controle
 - Os dados devem vir de store.productToBox() para compatibilidade
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Passar produto fora do formato esperado
+**Problema**: O box quebra ou não renderiza detalhes.
+**Diagnóstico**: Produto não veio de `store.productToBox()`.
+**Solução**: Sempre usar itens de `produtosBox.data` como entrada.
+
+### Erro 2: Não limitar a quantidade de fotos
+**Problema**: Layout desalinhado com muitas imagens.
+**Diagnóstico**: Galerias maiores que o esperado.
+**Solução**: Ajustar `total_fotos` conforme o layout do template.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Product To Box](04-store/producttobox.md)
+- [Visão geral store](04-store/visao-geral-store.md)

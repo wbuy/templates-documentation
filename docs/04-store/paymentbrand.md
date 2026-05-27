@@ -25,6 +25,26 @@ Disponibiliza como retorno as bandeiras de pagamento disponíveis na loja virtua
 {% set pagamentos = store.paymentBrand({mono: false, replaceMonoUnavailable: true}) %}
 ```
 
+### Retorno
+
+```json
+{
+  "gateway": [
+    {
+      "nome": "",
+      "icone": ""
+    }
+  ],
+  "brand": [
+    {
+      "nome": "",
+      "brand": "",
+      "icone": ""
+    }
+  ]
+}
+```
+
 ## Quando usar
 
 - Para exibir bandeiras de pagamento na loja
@@ -73,12 +93,19 @@ Saída esperada:
 - É útil para resgatar confiança do cliente ao mostrar formas de pagamento aceitas
 - Os ícones já vém prontos para exibição
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Iterar `pagamentos.brand` sem validar retorno
+**Problema**: Bloco de bandeiras fica vazio.
+**Diagnóstico**: `pagamentos.brand|length` é 0.
+**Solução**: Checar a lista antes de renderizar.
+
+### Erro 2: Forçar ícones mono quando não existem
+**Problema**: Ícones somem ao usar `mono: true`.
+**Diagnóstico**: Alguns gateways não possuem versão branca.
+**Solução**: Manter `replaceMonoUnavailable: true` para fallback em imagens coloridas.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Cart](04-store/cart.md)
+- [Visão geral store](04-store/visao-geral-store.md)

@@ -25,6 +25,32 @@ Disponibiliza como retorno os Kits de Produtos criados na loja virtual. Kits sã
 {% set kits = store.productKit({limit: '10'}) %}
 ```
 
+### Retorno
+
+```json
+{
+  "config": {
+    "show_menu": false,
+    "show_principal": false,
+    "formato": 0,
+    "total": 0,
+    "url": "",
+    "url_kit": "",
+    "name": "",
+    "names": ""
+  },
+  "items": [
+    {
+      "id": 0,
+      "titulo": "",
+      "foto": "",
+      "url": "",
+      "frete_gratis": false
+    }
+  ]
+}
+```
+
 ## Quando usar
 
 - Para exibir Kits/Looks criados na loja
@@ -105,12 +131,19 @@ Carrossel ou grid de kits/looks com imagens e títulos
 - Permite filtro por categoria
 - É ideal usar OWL Carousel para formato carrossel
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Renderizar quando `show_principal` está desativado
+**Problema**: Seção aparece mesmo com módulo desabilitado.
+**Diagnóstico**: `kits.config.show_principal` não é `'1'`.
+**Solução**: Validar `kits.config.show_principal == '1'` antes de renderizar.
+
+### Erro 2: Ignorar lista vazia de kits
+**Problema**: Estrutura aparece sem itens.
+**Diagnóstico**: `kits.items|length == 0`.
+**Solução**: Checar `kits.items|length > 0` antes do loop.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Product To Box](04-store/producttobox.md)
+- [Visão geral store](04-store/visao-geral-store.md)

@@ -32,6 +32,10 @@ O `store` é acessado diretamente no Twig sem necessidade de importação. A sin
 {% set dados = store.nomeMetodo({param: valor}) %}
 ```
 
+### Retorno
+
+O retorno varia conforme o método chamado e pode ser objeto ou array. Consulte a documentação específica de cada método.
+
 Principais métodos: `cart()`, `blogPosts()`, `categories()`, `getBrands()`, `getStoreData()`, `productDetail()`, `customerProfiles()`, entre muitos outros.
 
 ## Quando usar
@@ -105,12 +109,13 @@ Saída esperada:
 **Diagnóstico**: Verificar se há verificação de autenticação
 **Solução**: Envolver em condicional que verifica se usuário está logado
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+### Erro 4: Usar `store` fora do Twig
+**Problema**: Referenciar `store` em JavaScript ou HTML estático.
+**Diagnóstico**: Variável indefinida no navegador.
+**Solução**: Usar o objeto apenas em templates Twig processados pela plataforma.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Recursos gerais](04-store/recursos-gerais.md)
+- [Array global](04-store/array-global.md)
+- [detect.isMobile()](04-store/detect-ismobile.md)

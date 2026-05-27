@@ -35,6 +35,16 @@ Essencial para implementar formulários de contato, feedback, inscrições e out
 
 Onde `FORM_ID` é o ID do formulário encontrado no painel de controle.
 
+### Retorno
+
+```json
+{
+  "getDynamicForm": {},
+  "getDynamicFormQuestions": [],
+  "getDynamicFormHTML": "<form>...</form>"
+}
+```
+
 ## Quando usar
 
 - Exibir formulário de contato customizado

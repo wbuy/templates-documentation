@@ -23,6 +23,12 @@ Retorna um texto customizado configurado para exibição no topo das páginas de
 {% set texto_topo = store.getTextTop() %}
 ```
 
+### Retorno
+
+```json
+"Texto configurado para o topo"
+```
+
 ## Quando usar
 
 - Para exibir mensagens no topo de página de produtos
@@ -65,12 +71,19 @@ Nenhum parâmetro obrigatório.
 - Étimo para comunicações dincâmicas
 - Pode ser ligado/desligado conforme necessidade
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Renderizar sem validar texto
+**Problema**: Área vazia no topo da página.
+**Diagnóstico**: `televendas` vazio.
+**Solução**: Verificar `if televendas` antes de renderizar.
+
+### Erro 2: Não usar `|raw` quando há HTML
+**Problema**: Tags aparecem como texto.
+**Diagnóstico**: Conteúdo com HTML configurado no painel.
+**Solução**: Renderizar com `{{ televendas|raw }}` quando necessário.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Store Product Detail](04-store/store-productdetail.md)
+- [Visão geral store](04-store/visao-geral-store.md)

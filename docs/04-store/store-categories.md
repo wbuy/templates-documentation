@@ -25,6 +25,46 @@ Retorna a estrutura hierárquica de categorias de produtos da loja. Este método
 {% set categorias = store.categories({cid: 1}) %}
 ```
 
+### Retorno
+
+```json
+[
+  {
+    "id": 0,
+    "tabela": 0,
+    "nome": "",
+    "url": "",
+    "target": "",
+    "icone_tipo": 0,
+    "icone": "",
+    "cor": "",
+    "posicao": 0,
+    "menu": false,
+    "ativo": false,
+    "ordenar": "",
+    "total_produtos": 0,
+    "subs": [
+      {
+        "id": 0,
+        "nome": "",
+        "url": "",
+        "posicao": 0,
+        "total_produtos": 0,
+        "subs": [
+          {
+            "id": 0,
+            "nome": "",
+            "url": "",
+            "posicao": 0,
+            "total_produtos": 0
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
 ## Quando usar
 
 - Para exibir menu de categorias
@@ -82,12 +122,19 @@ Menu hierarquizado de categorias com links
 - Essencial para navegação da loja
 - Dados geralmente em cache
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Renderizar sem validar retorno
+**Problema**: Menu vazio quando não há categorias.
+**Diagnóstico**: `categorias|length` é 0.
+**Solução**: Condicionar o bloco com `if categorias|length > 0`.
+
+### Erro 2: Ignorar flags de menu/ativo
+**Problema**: Categorias ocultas aparecem no layout.
+**Diagnóstico**: Itens com `menu` ou `ativo` desabilitados.
+**Solução**: Filtrar categorias conforme `menu`/`ativo` quando necessário.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Store Categories Menu](04-store/store-categoriesmenu.md)
+- [Visão geral store](04-store/visao-geral-store.md)

@@ -23,6 +23,21 @@ Retorna dados da loja visão do usuário. Este método oferece informações per
 {% set user_store = store.userStore() %}
 ```
 
+### Retorno
+
+```json
+{
+  "logged": false,
+  "data": {
+    "id": 0,
+    "nome": "",
+    "tabela": 0,
+    "credito": 0.0,
+    "pontos": 0
+  }
+}
+```
+
 ## Quando usar
 
 - Para personalização baseada em usuário logado
@@ -83,12 +98,19 @@ Nenhum parâmetro obrigatório.
 - Excelente para fidelização de clientes
 - Suporta ofertas personalizadas
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Acessar dados sem validar login
+**Problema**: `usuario.data` não existe para visitantes.
+**Diagnóstico**: `usuario.logged` é false.
+**Solução**: Usar condicional antes de acessar `usuario.data`.
+
+### Erro 2: Assumir dados completos do usuário
+**Problema**: Campos como `credito` ou `pontos` nulos.
+**Diagnóstico**: Loja sem programa de pontos ou crédito ativo.
+**Solução**: Validar cada campo antes de exibir.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Customer Profiles](04-store/customerprofiles.md)
+- [Visão geral store](04-store/visao-geral-store.md)

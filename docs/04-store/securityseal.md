@@ -16,51 +16,68 @@ related:
 
 ## O que faz
 
-[Escrever descrição do objetivo e propósito - máx 3 parágrafos]
+O método `store.securitySeal()` retorna os selos de segurança cadastrados na loja virtual. O retorno é uma lista de links/ícones prontos para renderização em HTML, usados para reforçar confiança no checkout, rodapé ou páginas de produto.
 
 ## Sintaxe
 
+```twig
+{% set selos = store.securitySeal() %}
 ```
-[Documentar sintaxe, parâmetros, retornos]
+
+Com parâmetro opcional:
+
+```twig
+{% set selos = store.securitySeal({ mono: true }) %}
+```
+
+### Retorno
+
+Retorna um array de strings HTML prontas para renderizar:
+
+```json
+[
+  "<a href=\"https://...\" target=\"_blank\"><img src=\"/img/selo.png\" alt=\"Selo\" /></a>"
+]
 ```
 
 ## Quando usar
 
-- [Casos ideais]
-- [Pré-condições]
-- [Limitações]
+- Para exibir selos de segurança no rodapé, checkout ou páginas de produto
+- Quando a loja possui selos configurados no painel
+- Para reforçar credibilidade e reduzir objeções de compra
 
 ## Exemplo
 
-```
-[Exemplo funcional mínimo]
-```
-
-Saída esperada:
-```
-[Output esperado]
+```twig
+{% set selos = store.securitySeal() %}
+{% if selos|length > 0 %}
+  <div class="seals">
+    {% for selo in selos %}
+      <span>{{ selo|raw }}</span>
+    {% endfor %}
+  </div>
+{% endif %}
 ```
 
 ## Observações
 
-- [Compatibilidade]
-- [Performance]
-- [Comportamento em cache]
-- [Impacto SEO/Mobile]
+- O retorno já vem preparado em HTML; use `|raw` para renderização correta
+- O parâmetro `mono` busca versões brancas com fundo transparente quando disponíveis
+- A ordem dos selos segue o cadastro na loja
 
 ## Erros comuns
 
-### Erro frequente 1
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+### Erro 1: Esquecer `|raw` no selo
+**Problema**: O HTML aparece como texto na página.
+**Diagnóstico**: Tags `<a>`/`<img>` visíveis no conteúdo.
+**Solução**: Renderizar com `{{ selo|raw }}`.
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+### Erro 2: Não validar retorno vazio
+**Problema**: Loop em array vazio gera seção sem conteúdo.
+**Diagnóstico**: Container vazio no layout.
+**Solução**: Verificar `if selos|length > 0` antes de iterar.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Visão geral store](04-store/visao-geral-store.md)
+- [Get Store Data](04-store/getstoredata.md)

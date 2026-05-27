@@ -25,6 +25,12 @@ Recurso responsável por mostrar as instituições participantes do programa O P
 {% endif %}
 ```
 
+### Retorno
+
+```json
+false
+```
+
 ## Quando usar
 
 - Na página de detalhes do produto
@@ -53,12 +59,19 @@ Componente de O Pólen renderizado na página
 - Deve ser usado exclusivamente na página de detalhes do produto
 - Não há parâmetros a serem passados para esta verificação
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Renderizar fora da página de detalhes
+**Problema**: O componente é inserido em home, categoria ou busca.
+**Diagnóstico**: O Pólen não aparece ou gera inconsistência de layout.
+**Solução**: Usar o bloco apenas no template de detalhes do produto.
+
+### Erro 2: Não verificar `geral.hasOpolen`
+**Problema**: O componente é renderizado sem contrato ativo.
+**Diagnóstico**: A seção fica vazia ou não carrega instituições.
+**Solução**: Envolver o componente com `{% if geral.hasOpolen %}`.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Store Product Detail](04-store/store-productdetail.md)
+- [Visão geral store](04-store/visao-geral-store.md)

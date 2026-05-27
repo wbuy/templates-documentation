@@ -20,9 +20,27 @@ Disponibiliza como retorno banners publicitários da loja virtual. Estes são ba
 ## Sintaxe
 
 ```twig
-{% set banners_pub = store.publicityBanner() %}
+{% set banner = store.publicityBanner() %}
 {# com parâmetro #}
-{% set banners_pub = store.publicityBanner({posicao: 1}) %}
+{% set banner = store.publicityBanner({tipo: '21', limit: '1'}) %}
+```
+
+### Retorno
+
+```json
+[
+  {
+    "id": 0,
+    "tipo": 0,
+    "formato": 0,
+    "identificacao": "",
+    "arquivo": "",
+    "url": "",
+    "target": "",
+    "codigo": "",
+    "raw": ""
+  }
+]
 ```
 
 ## Quando usar
@@ -35,14 +53,14 @@ Disponibiliza como retorno banners publicitários da loja virtual. Estes são ba
 ## Exemplo
 
 ```twig
-{% set banners_pub = store.publicityBanner() %}
-{% for banner in banners_pub.items %}
-<div class="publicity-banner">
-	<a href="{{ banner.link }}">
-		<img src="{{ banner.foto }}" alt="{{ banner.titulo }}" />
-	</a>
-</div>
-{% endfor %}
+{% set bannerTopo = store.publicityBanner({tipo: '21', limit: '1'}) %}
+{% if bannerTopo|length > 0 %}
+	<div class="central">
+		<div class="b_header mb-4">
+			{{ bannerTopo[0].raw|raw }}
+		</div>
+	</div>
+{% endif %}
 ```
 
 Saída esperada:
@@ -52,33 +70,45 @@ Banners publicitários exibidos nas áreas definidas
 
 ## Retorno dos dados
 
-**items** - Array de banners publicitários
-- `items[x].id` (string) - ID do banner
-- `items[x].titulo` (string) - Título
-- `items[x].foto` (string) - URL da imagem
-- `items[x].link` (string) - URL do link
-- `items[x].target` (string) - Target do link
-- `items[x].posicao` (int) - Posição de exibição
+**id** - ID do banner
+**tipo** - Tipo do banner (conforme lista de parâmetros)
+**formato** - Formato: 1 = imagem; 2 = código/script
+**identificacao** - Identificador do banner
+**arquivo** - URL da imagem do banner
+**url** - Link para abertura no clique
+**target** - Target do link
+**codigo** - Script do banner quando `formato` for 2
+**raw** - Banner pronto para inserção no código
 
 ## Parâmetros de consulta
 
 | Parâmetro | Padrão | Descrição |
 |-----------|---------|-------------|
-| posicao | '' | Filtrar por posição do banner |
+| tipo | '' | Filtra pelo tipo do item (ex.: 21, 22, 23...) |
+| order | random | Ordenação dos resultados (posicao-asc, posicao-desc, random) |
+| produto_id | '' | ID do produto para priorizar banner na página de detalhes |
+| limit | 10 | Limita a quantidade de itens retornados |
 
 ## Observações
 
-- Diferentes de banners principais
-- Usados para promoções secundárias
-- Podem estar em múltiplas posições da loja
-- Suportam imagens e links personalizados
+- Diferentes de banners principais (mainBanner)
+- Usados para promoções secundárias e campanhas específicas
+- `raw` já vem pronto para inserção no HTML com `|raw`
+- O parâmetro `produto_id` é útil na página de detalhes do produto
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Não usar `|raw` no banner
+**Problema**: O HTML do banner aparece como texto.
+**Diagnóstico**: Tags renderizadas na página.
+**Solução**: Renderizar com `{{ banner.raw|raw }}`.
+
+### Erro 2: Não validar lista vazia
+**Problema**: A área do banner fica vazia.
+**Diagnóstico**: Retorno sem itens.
+**Solução**: Verificar `if bannerTopo|length > 0` antes de renderizar.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Main Banner](04-store/mainbanner.md)
+- [Visão geral store](04-store/visao-geral-store.md)

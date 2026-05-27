@@ -24,6 +24,15 @@ Disponibiliza um widget do Facebook configurado para a loja virtual. Este métod
 {% set facebook = store.widgetFacebook() %}
 ```
 
+### Retorno
+
+```json
+{
+  "account": "",
+  "raw": ""
+}
+```
+
 ## Quando usar
 
 - Para exibir Page Plugin do Facebook
@@ -83,12 +92,20 @@ Nenhum parâmetro obrigatório.
 - Ideal para integração social e engajamento
 - Suporta customização de tamanho e opções
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Esquecer `|raw` no widget
+**Problema**: O HTML do plugin aparece como texto.
+**Diagnóstico**: Tags visíveis dentro do layout.
+**Solução**: Renderizar com `{{ fb.raw|raw }}`.
+
+### Erro 2: Renderizar sem conta configurada
+**Problema**: Widget vazio no template.
+**Diagnóstico**: `fb.account` não está preenchido.
+**Solução**: Validar `fb.account` antes de exibir o bloco.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Widget Instagram](04-store/store-widgetinstagram.md)
+- [Social Icons](04-store/socialicons.md)
+- [Visão geral store](04-store/visao-geral-store.md)

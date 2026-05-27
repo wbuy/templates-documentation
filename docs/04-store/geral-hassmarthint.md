@@ -29,6 +29,12 @@ Recurso do serviço SmartHint responsável por administrar vitrines dinâmicas n
 {% endif %}
 ```
 
+### Retorno
+
+```json
+false
+```
+
 ## Quando usar
 
 - Quando o lojista tem contrato ativo com SmartHint
@@ -61,12 +67,19 @@ Vitrines SmartHint renderizadas nas posições definidas
 - Na variável "type" do método SmartHint.Call, informe a qual página está sendo inserido o código
 - As posições renderizam vitrines inteligentes baseadas em IA
 
-### Erro frequente 2
-**Problema**: [Descrição]
-**Diagnóstico**: [Como identificar]
-**Solução**: [Passo a passo]
+## Erros comuns
+
+### Erro 1: Não definir o `type` correto no `SmartHint.Call`
+**Problema**: As vitrines não carregam na página certa.
+**Diagnóstico**: Containers ficam vazios mesmo com contrato ativo.
+**Solução**: Informar o tipo de página correspondente em `SmartHint.Call('setPage', { type: 'home', ... })`.
+
+### Erro 2: Renderizar sem validar `geral.hasSmartHint`
+**Problema**: O layout reserva espaço sem conteúdo.
+**Diagnóstico**: Blocos vazios em lojas sem SmartHint.
+**Solução**: Envolver os containers com `{% if geral.hasSmartHint %}`.
 
 ## Veja também
 
-- [Link para arquivo relacionado]
-- [Link para próximo tópico]
+- [Showcase Product](04-store/showcaseproduct.md)
+- [Visão geral store](04-store/visao-geral-store.md)
