@@ -26,6 +26,117 @@ Retorna um array estruturado de produtos prontos para serem exibidos em caixas/b
 {% set produtosBox = store.productToBox({limit: '4', order: 'random'}) %}
 ```
 
+### Retorno
+
+```json
+{
+  "total": 0, // Total de produtos retornados na consulta
+  "data": [
+    {
+      "id": 0,
+      "cod": "", // Código do produto
+      "produto": "",
+      "produto_url": "",
+      "isPromo": false,
+      "data_promo": "YYYY-MM-DD", // Validade final da promoção
+      "valor_original": 0.0,
+      "valor_venda": 0.0,
+      "valor_venda_boleto": 0.0,
+      "porcentagem_desconto": 0.0,
+      "quantidade_minima": 0, // Quantidade mínima para venda
+      "venda": true, // Se disponível para venda
+      "frete_gratis": false,
+      "marca": {
+        "id": 0,
+        "nome": "",
+        "url": ""
+      },
+      "categoria_level1": {
+        "id": 0,
+        "nome": "",
+        "url": "",
+        "tabela": 0
+      },
+      "categoria_level2": {
+        "id": 0,
+        "nome": "",
+        "url": ""
+      },
+      "categoria_level3": {
+        "id": 0,
+        "nome": "",
+        "url": ""
+      },
+      "produto_online": true,
+      "url_relative": "",
+      "url_sku": "",
+      "valores": {
+        "varejo_apartir": true,
+        "atacado": 0.0
+      },
+      "cores": [
+        {
+          "id": 0,
+          "nome": "",
+          "primaria": "#hex",
+          "secundaria": "#hex",
+          "img": "",
+          "ativo": "",
+          "posicao": "",
+          "estoque": "",
+          "foto": {
+            "cor_id": 0,
+            "codigo": "",
+            "foto": "",
+            "foto_mini": "",
+            "legenda": "",
+            "oculto": "",
+            "video": ""
+          }
+        }
+      ],
+      "variacoes": [
+        {
+          "id": 0,
+          "variacao_id": 0,
+          "nome": "",
+          "valor": "",
+          "posicao": 0,
+          "ativo": true
+        }
+      ],
+      "fotos": [
+        {
+          "cor_id": 0,
+          "codigo": "",
+          "foto": "",
+          "foto_mini": "",
+          "legenda": "",
+          "oculto": "",
+          "video": ""
+        }
+      ],
+      "quantidade_total_em_estoque": 0,
+      "esgotado": false,
+      "parcelamento": "", // raw - Matriz com informações do parcelamento do produto com base no valor e nos gateways ativos
+      "parcelamento_list": {
+        "tipo": "",
+        "boleto": false, // Se true, este gateway está configurado para receber por boleto
+        "parcelas": 0, // Quantidade de parcelas possíveis para pagamento
+        "valor_parcela": 0.0, // Valor de cada parcela
+        "has_juros": false, // Se true, o valor_parcela está calculado com juros
+        "perc_desconto": 0.0 // Percentual de desconto quando existente
+      },
+      "grade_tipo": 0,
+      "campos_adicionais": {
+        "title": "",
+        "valores": ""
+      }
+    }
+  ]
+}
+```
+
 ## Quando usar
 
 - Para exibir galeria de produtos de forma padronizada
@@ -38,22 +149,24 @@ Retorna um array estruturado de produtos prontos para serem exibidos em caixas/b
 ```twig
 {% set produtosBox = store.productToBox({limit:'4', order:'lancamento'}) %}
 <div class="row">
-	{% for produto in produtosBox.data %}
-	<div class="col-md-3">
-		{{ store.productBoxDefault(produto) }}
-	</div>
-	{% endfor %}
+  {% for produto in produtosBox.data %}
+  <div class="col-md-3">
+    {{ store.productBoxDefault(produto) }}
+  </div>
+  {% endfor %}
 </div>
 ```
 
 Saída esperada:
-```
+
+```text
 Galeria de 4 produtos últimos lançamentos com informações completas
 ```
 
 ## Retorno dos dados
 
 **data** - Array de produtos com estrutura completa
+
 - `data[x].id` (int) - ID do produto
 - `data[x].titulo` (string) - Título/nome
 - `data[x].url` (string) - URL do produto
@@ -82,6 +195,7 @@ Galeria de 4 produtos últimos lançamentos com informações completas
 - Performance otimizada para grandes listas
 
 ### Erro frequente 2
+
 **Problema**: [Descrição]
 **Diagnóstico**: [Como identificar]
 **Solução**: [Passo a passo]

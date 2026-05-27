@@ -29,7 +29,22 @@ Este método é essencial para criar seções de blog dinâmicas, vitrines de co
 {% set posts = store.blogPosts({limit: '10'}) %}
 ```
 
-**Parâmetro**: `limit` (string) — Quantidade de posts a retornar (padrão: 4)
+**Parâmetros:**
+`limit` (string) — Quantidade de posts a retornar (padrão: 4)
+
+### Retorno
+
+```json
+{
+  "id": 0,
+  "titulo": "",
+  "blog_url": "",
+  "texto": "",
+  "imagem": "", // URL da imagem de exibição
+  "visualizacao": "", // Número de visualizações do post
+  "cadastro": "YYYY-MM-DD HH:MM:SS"
+}
+```
 
 ## Quando usar
 

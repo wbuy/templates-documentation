@@ -35,33 +35,30 @@ Disponibiliza um widget de Instagram configurado para a loja virtual. Este méto
 
 ```twig
 {% set instagram = store.widgetInstagram() %}
-{% if instagram.enabled %}
+{% if instagram.token %}
 <section class="instagram-widget">
-	<h3>{{ instagram.titulo }}</h3>
-	<div id="instagram-feed" class="instagram-feed">
-		{# O widget se autorenderiza via JavaScript #}
-	</div>
-	<script src="{{ instagram.script_url }}"></script>
+ <h3>{{ instagram.username }}</h3>
+ <div id="instagram-feed" class="instagram-feed">
+  {# O widget se autorenderiza via JavaScript #}
+ </div>
+ <script src="{{ base_system }}/jquery2/instafeed2.min.js"></script>
 </section>
 {% endif %}
 ```
 
 Saída esperada:
+
 ```
 Widget de Instagram renderizado com posts
 ```
 
 ## Retorno dos dados
 
-**enabled** (bool) - Se o widget está ativado
+**token** (string) - Token de acesso para autenticação do widget
 
-**titulo** (string) - Título do widget
+**username** (string) - Nome de usuário do Instagram
 
-**script_url** (string) - URL do script do widget
-
-**conta** (string) - Nome da conta Instagram
-
-**limite** (int) - Quantidade de posts a exibir
+**limit** (string) - Limite máximo de posts a exibir
 
 ## Parâmetros de consulta
 
@@ -75,6 +72,7 @@ Nenhum parâmetro obrigatório.
 - Suporta customização de layout
 
 ### Erro frequente 2
+
 **Problema**: [Descrição]
 **Diagnóstico**: [Como identificar]
 **Solução**: [Passo a passo]
