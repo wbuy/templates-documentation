@@ -38,7 +38,7 @@ Este método retorna um valor booleano (`true` ou `false`), permitindo que você
 ### Retorno
 
 ```json
-false
+false // ou true, dependendo do dispositivo do usuário
 ```
 
 ## Quando usar

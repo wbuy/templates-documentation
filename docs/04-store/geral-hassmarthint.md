@@ -21,18 +21,18 @@ Recurso do serviço SmartHint responsável por administrar vitrines dinâmicas n
 
 ```twig
 {% if geral.hasSmartHint %}
-	<div id="smarthint-position-1"></div>
-	<div id="smarthint-position-2"></div>
-	<div id="smarthint-position-3"></div>
-	<div id="smarthint-position-4"></div>
-	<div id="smarthint-position-5"></div>
+  <div id="smarthint-position-1"></div>
+  <div id="smarthint-position-2"></div>
+  <div id="smarthint-position-3"></div>
+  <div id="smarthint-position-4"></div>
+  <div id="smarthint-position-5"></div>
 {% endif %}
 ```
 
 ### Retorno
 
 ```json
-false
+false // ou true, dependendo do contrato do lojista
 ```
 
 ## Quando usar
@@ -45,18 +45,19 @@ false
 
 ```twig
 {% if geral.hasSmartHint %}
-	<div id="smarthint-position-1"></div>
-	<div id="smarthint-position-2"></div>
-	<script>
-	$(function(){
-		SmartHint.Call('setPage',{type:'home', data: {} });
-	});
-	</script>
+ <div id="smarthint-position-1"></div>
+ <div id="smarthint-position-2"></div>
+ <script>
+ $(function(){
+  SmartHint.Call('setPage',{type:'home', data: {} });
+ });
+ </script>
 {% endif %}
 ```
 
 Saída esperada:
-```
+
+```text
 Vitrines SmartHint renderizadas nas posições definidas
 ```
 
@@ -70,11 +71,13 @@ Vitrines SmartHint renderizadas nas posições definidas
 ## Erros comuns
 
 ### Erro 1: Não definir o `type` correto no `SmartHint.Call`
+
 **Problema**: As vitrines não carregam na página certa.
 **Diagnóstico**: Containers ficam vazios mesmo com contrato ativo.
 **Solução**: Informar o tipo de página correspondente em `SmartHint.Call('setPage', { type: 'home', ... })`.
 
 ### Erro 2: Renderizar sem validar `geral.hasSmartHint`
+
 **Problema**: O layout reserva espaço sem conteúdo.
 **Diagnóstico**: Blocos vazios em lojas sem SmartHint.
 **Solução**: Envolver os containers com `{% if geral.hasSmartHint %}`.

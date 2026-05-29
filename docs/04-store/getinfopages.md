@@ -25,11 +25,13 @@ Este método é ideal para construir menus de rodapé ou barras laterais que lis
 {% set infoPages = store.getInfoPages() %}
 
 {% for page in infoPages %}
-    <a href="{{ page.url }}">{{ page.nome }}</a>
+  <a href="{{ page.url }}">{{ page.nome }}</a>
 {% endfor %}
 ```
 
-**Retorno**: Array de strings com HTML pronto para links das páginas.
+**Parâmetros**:
+
+- `text_upper` (boolean) — true para retornar os nomes das páginas em maiúsculas (opcional)
 
 ### Retorno
 
@@ -57,6 +59,7 @@ Este método é ideal para construir menus de rodapé ou barras laterais que lis
 ```
 
 Saída esperada:
+
 ```html
 <ul class="footer-links">
   <li><a href="/p/sobre-nos" title="Sobre Nós">Sobre Nós</a></li>

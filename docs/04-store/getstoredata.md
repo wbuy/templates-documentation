@@ -29,8 +29,6 @@ Inclui dados como nome fantasia, razão social, CNPJ, endereços completos, múl
 {{ storeData.email }}
 ```
 
-**Retorno**: Objeto contendo chaves como `nome_fantasia`, `cnpj`, `endereco`, `telefone`, `redes_sociais` (array), etc.
-
 ### Retorno
 
 ```json

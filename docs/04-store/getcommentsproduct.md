@@ -28,8 +28,10 @@ O método `store.getCommentsProduct(productId)` recupera todos os comentários e
 {% set comentarios = store.getCommentsProduct(productId, {limit: '5'}) %}
 ```
 
-**Parâmetro**: `limit` (string, padrão: 3) — Quantidade de comentários a retornar
-**Filtro**: `ativo` (número, padrão: 1) — 1 para ativos, 0 para inativos
+**Parâmetros de consulta**:
+
+- `limit` (string, padrão: 3) — Quantidade de comentários a retornar
+- `ativo` (número, padrão: 1) — 1 para ativos, 0 para inativos
 
 ### Retorno
 
@@ -83,6 +85,7 @@ O método `store.getCommentsProduct(productId)` recupera todos os comentários e
 ```
 
 Saída esperada:
+
 ```html
 <h2>AVALIAÇÕES (2)</h2>
 <div class="avaliacoes-lista">
@@ -104,17 +107,20 @@ Saída esperada:
 
 ## Erros comuns
 
-### Erro 1: Não verificar if comentarios vazio
+### Erro 1: Não verificar `if comentarios.total > 0`
+
 **Problema**: Loop em array vazio causa erros
 **Diagnóstico**: Página em branco ou lista vazia
 **Solução**: Verificar `if comentarios.total > 0`
 
 ### Erro 2: Esquecer `|raw` em estrelas
+
 **Problema**: `{{ comentario.estrelas }}` mostra HTML como texto
 **Diagnóstico**: HTML renderizado como string
 **Solução**: Usar `{{ comentario.estrelas|raw }}`
 
 ### Erro 3: ID de produto inválido
+
 **Problema**: `store.getCommentsProduct(null)` ou ID inválido
 **Diagnóstico**: Retorna array vazio
 **Solução**: Verificar se `extra.id` existe e é válido

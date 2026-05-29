@@ -33,8 +33,6 @@ Estas avaliações incluem o nome do cliente, a nota (geralmente de 1 a 5), o co
 {% endfor %}
 ```
 
-**Retorno**: Array de objetos contendo dados do depoimento.
-
 ### Retorno
 
 ```json

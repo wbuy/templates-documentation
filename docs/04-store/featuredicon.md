@@ -83,6 +83,7 @@ O método `store.featuredIcon()` recupera alertas/badges de destaque configurado
 ```
 
 Saída esperada:
+
 ```html
 <div id="alerts">
   <p><a href="promocoes" target="_blank" style="background-color: #ff6b6b">
@@ -103,16 +104,19 @@ Saída esperada:
 ## Erros comuns
 
 ### Erro 1: Esquecer o `|raw` para renderizar HTML
+
 **Problema**: Ícone aparece como string `<i class="fa...">`
 **Diagnóstico**: HTML do ícone é exibido como texto
 **Solução**: Usar filtro Twig `{{ icone|raw }}`
 
 ### Erro 2: Confundir tipos de ícone
+
 **Problema**: Tentar usar Font Awesome com tipo 2 ou vice-versa
 **Diagnóstico**: Ícone não exibe corretamente
 **Solução**: Verificar `icone_tipo`: se 1, usar classe fa; se 2, usar URL
 
 ### Erro 3: Cores sem verificação
+
 **Problema**: Acessar `cor_fundo` quando não está configurada
 **Diagnóstico**: Retorna vazio ou string vazia
 **Solução**: Sempre incluir cor ou verificar antes de aplicar

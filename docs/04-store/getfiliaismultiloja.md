@@ -25,7 +25,11 @@ Método disponível apenas em lojas do tipo matriz (multiloja). Retorna lista de
 {% set filiais = store.getFiliaisMultiloja({cid:'123', sid:'456'}) %}
 ```
 
-Parâmetros: `cid`, `sid`, `order`
+Parâmetros:
+
+- `cid` - ID da categoria principal (nível 1)
+- `sid` - ID da subcategoria (nível 2)
+- `order` - Ordenacao dos resultados (possiveis: 'nome,asc', 'random'); padrão: 'nome,asc'
 
 ### Retorno
 
@@ -65,10 +69,12 @@ Parâmetros: `cid`, `sid`, `order`
 ## Erros comuns
 
 ### Erro 1: Usar em loja simples
+
 **Problema**: Método não existe
 **Solução**: Verificar se é multiloja
 
 ### Erro 2: Parâmetros inválidos
+
 **Solução**: Usar IDs corretos
 
 ## Veja também

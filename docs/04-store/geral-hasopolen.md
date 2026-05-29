@@ -28,7 +28,7 @@ Recurso responsável por mostrar as instituições participantes do programa O P
 ### Retorno
 
 ```json
-false
+false // ou true, dependendo do contrato do lojista
 ```
 
 ## Quando usar

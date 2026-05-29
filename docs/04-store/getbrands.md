@@ -75,26 +75,10 @@ Disponibiliza como retorno as marcas cadastradas na loja virtual. Este método r
 ```
 
 Saída esperada:
-```
+
+```text
 Carrossel de marcas com logos e links
 ```
-
-## Retorno dos dados
-
-**items** - Array com dados das marcas
-- `items[x].id` (int) - ID da marca
-- `items[x].marca` (string) - Nome da marca
-- `items[x].marca_url` (string) - Link para página de produtos da marca
-- `items[x].logo` (string) - URL da logo
-- `items[x].total_produtos` (int) - Total de produtos cadastrados
-
-**showOnHomePage** - Boolean indicando se permite mostrar o módulo na página inicial
-
-## Parâmetros de consulta
-
-| Parâmetro | Padrão | Descrição |
-|-----------|---------|-------------|
-| destaque | '' | 1 = Apenas destaque; 0 = Não destaque; '' (vazio) = Todos |
 
 ## Observações
 
@@ -106,16 +90,19 @@ Carrossel de marcas com logos e links
 ## Erros comuns
 
 ### Erro 1: Iterar sem validar `marcas.items`
+
 **Problema**: Loop em lista vazia gera seção sem conteúdo.
 **Diagnóstico**: Carrossel aparece vazio.
 **Solução**: Verificar `if marcas.items|length > 0` antes de renderizar.
 
 ### Erro 2: Assumir que todas as marcas têm logo
+
 **Problema**: Imagens quebradas quando a marca não tem logo.
 **Diagnóstico**: `<img>` sem `src` válido.
 **Solução**: Usar fallback de texto quando `marca.logo` estiver vazio.
 
 ### Erro 3: Usar `destaque` com tipo incorreto
+
 **Problema**: Filtro não é aplicado e retorna todas as marcas.
 **Diagnóstico**: Parâmetro passado como número ou boolean.
 **Solução**: Enviar `destaque` como string (`'1'`, `'0'` ou `''`).

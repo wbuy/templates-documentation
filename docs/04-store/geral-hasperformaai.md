@@ -21,14 +21,14 @@ Recurso responsável por mostrar vitrines dinâmicas do serviço PerformaAI quan
 
 ```twig
 {% if geral.hasPerformaAI %}
-	<performa></performa>
+  <performa></performa>
 {% endif %}
 ```
 
 ### Retorno
 
 ```json
-false
+false // ou true, dependendo do contrato do lojista
 ```
 
 ## Quando usar
@@ -41,14 +41,15 @@ false
 
 ```twig
 {% if geral.hasPerformaAI %}
-	<section class="performa-vitrines">
-		<performa></performa>
-	</section>
+ <section class="performa-vitrines">
+  <performa></performa>
+ </section>
 {% endif %}
 ```
 
 Saída esperada:
-```
+
+```text
 Vitrines dinâmicas renderizadas pelo componente PerformaAI
 ```
 
@@ -62,11 +63,13 @@ Vitrines dinâmicas renderizadas pelo componente PerformaAI
 ## Erros comuns
 
 ### Erro 1: Renderizar sem validar `geral.hasPerformaAI`
+
 **Problema**: O componente é exibido quando não há contrato ativo.
 **Diagnóstico**: A vitrine não carrega ou fica vazia.
 **Solução**: Envolver o bloco com `{% if geral.hasPerformaAI %}`.
 
 ### Erro 2: Não prever fallback quando o recurso está indisponível
+
 **Problema**: A área de vitrine fica vazia quando o recurso não está ativo.
 **Diagnóstico**: Seções sem conteúdo em lojas sem PerformaAI.
 **Solução**: Adicionar fallback visual ou ocultar a seção quando `geral.hasPerformaAI` for false.

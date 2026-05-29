@@ -27,6 +27,7 @@ O método `store.dynamicPages()` recupera páginas customizáveis criadas no pai
 ```
 
 **Parâmetros**:
+
 - `menu` (string) — '1' para páginas no menu, '0' para não-menu
 - `local` (string) — '' (todas), '1' (Institucional), '2' (Precisa de ajuda)
 - `text_upper` (boolean) — true para maiúsculas
@@ -36,7 +37,7 @@ O método `store.dynamicPages()` recupera páginas customizáveis criadas no pai
 
 ```json
 [
-  "<a href=\"/p/politica-de-privacidade\">Política de Privacidade</a>"
+  "<a href=\"blog/\">Nosso blog</a>"
 ]
 ```
 
@@ -67,10 +68,12 @@ O método `store.dynamicPages()` recupera páginas customizáveis criadas no pai
 ## Erros comuns
 
 ### Erro 1: Esquecer `|raw`
+
 **Problema**: HTML como texto `<a href...`
 **Solução**: `{{ pagina|raw }}`
 
 ### Erro 2: Parâmetro incorreto
+
 **Problema**: `menu: 1` (número) em vez de `'1'` (string)
 **Solução**: Sempre string: `menu: '1'`
 
