@@ -259,7 +259,7 @@ Lista de produtos com filtros, categorias e paginação
 ## Parâmetros de consulta
 
 | Parâmetro | Padrão | Descrição |
-|-----------|---------|-------------|
+| ---------- | --------- | ------------- |
 | page | 1 | Página em exibição |
 | total_per_page | 15 | Total de resultados por página |
 | order | valor-asc | Ordenação (valor-asc, valor-desc, produto, lancamento) |
@@ -277,11 +277,13 @@ Lista de produtos com filtros, categorias e paginação
 ## Erros comuns
 
 ### Erro 1: Ignorar a variável `extra`
+
 **Problema**: Filtros e paginação não funcionam.
 **Diagnóstico**: `page`, `cor` e `order` não chegam ao método.
 **Solução**: Passar `extra.page`, `extra.cor` e `extra.order` na chamada.
 
 ### Erro 2: Não validar paginação
+
 **Problema**: Links de página quebrados.
 **Diagnóstico**: `conteudo.pagination` vazio.
 **Solução**: Verificar `conteudo.pagination.page_total` antes de renderizar.

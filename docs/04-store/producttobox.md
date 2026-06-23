@@ -181,7 +181,7 @@ Galeria de 4 produtos últimos lançamentos com informações completas
 ## Parâmetros de consulta
 
 | Parâmetro | Padrão | Descrição |
-|-----------|---------|-------------|
+| ----------- | --------- | ------------- |
 | limit | 12 | Quantidade de produtos a retornar |
 | order | valor-asc | Ordem (valor-asc, valor-desc, random, lancamento) |
 | cid | '' | ID da categoria nível 1 |
@@ -197,11 +197,13 @@ Galeria de 4 produtos últimos lançamentos com informações completas
 ## Erros comuns
 
 ### Erro 1: Usar produtos fora do retorno de `productToBox`
+
 **Problema**: O box padrão quebra por falta de campos.
 **Diagnóstico**: Produto não possui estrutura completa esperada.
 **Solução**: Usar itens de `produtosBox.data` para renderização.
 
 ### Erro 2: Não validar lista vazia
+
 **Problema**: Layout com seções sem produtos.
 **Diagnóstico**: `produtosBox.total` é 0.
 **Solução**: Verificar `if produtosBox.total > 0` antes do loop.

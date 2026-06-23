@@ -57,24 +57,27 @@ Disponibiliza como retorno as bandeiras de pagamento disponíveis na loja virtua
 ```twig
 {% set pagamentos = store.paymentBrand() %}
 <div class="brands">
-	{% for brand in pagamentos.brand %}
-	<span><img src="{{ brand.icone }}" alt="{{ brand.nome }}" /></span>
-    {% endfor %}
+  {% for brand in pagamentos.brand %}
+  <span><img src="{{ brand.icone }}" alt="{{ brand.nome }}" /></span>
+   {% endfor %}
 </div>
 ```
 
 Saída esperada:
-```
+
+```text
 Ícones de bandeiras de pagamento exibidos
 ```
 
 ## Retorno dos dados
 
 **gateway** - Array com todas as marcas de pagamento configuradas (Mercado Pago, PagSeguro, Pagar.me...)
+
 - `gateway[x].nome` (string) - Nome do gateway
 - `gateway[x].icone` (string) - URL do ícone
 
 **brand** - Array com todas as bandeiras de pagamento disponíveis
+
 - `brand[x].nome` (string) - Nome da bandeira (Mastercard, Visa...)
 - `brand[x].brand` (string) - Tipo/código da bandeira
 - `brand[x].icone` (string) - URL do ícone da bandeira
@@ -82,7 +85,7 @@ Saída esperada:
 ## Parâmetros de consulta
 
 | Parâmetro | Padrão | Descrição |
-|-----------|---------|-------------|
+| ---------- | --------- | ------------- |
 | mono | false | Quando true, busca imagens brancas com fundo transparente |
 | replaceMonoUnavailable | true | Quando false e mono true, não faz troca para imagem colorida se mono não existir |
 
@@ -96,11 +99,13 @@ Saída esperada:
 ## Erros comuns
 
 ### Erro 1: Iterar `pagamentos.brand` sem validar retorno
+
 **Problema**: Bloco de bandeiras fica vazio.
 **Diagnóstico**: `pagamentos.brand|length` é 0.
 **Solução**: Checar a lista antes de renderizar.
 
 ### Erro 2: Forçar ícones mono quando não existem
+
 **Problema**: Ícones somem ao usar `mono: true`.
 **Diagnóstico**: Alguns gateways não possuem versão branca.
 **Solução**: Manter `replaceMonoUnavailable: true` para fallback em imagens coloridas.

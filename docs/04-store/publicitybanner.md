@@ -55,16 +55,17 @@ Disponibiliza como retorno banners publicitários da loja virtual. Estes são ba
 ```twig
 {% set bannerTopo = store.publicityBanner({tipo: '21', limit: '1'}) %}
 {% if bannerTopo|length > 0 %}
-	<div class="central">
-		<div class="b_header mb-4">
-			{{ bannerTopo[0].raw|raw }}
-		</div>
-	</div>
+  <div class="central">
+    <div class="b_header mb-4">
+      {{ bannerTopo[0].raw|raw }}
+    </div>
+  </div>
 {% endif %}
 ```
 
 Saída esperada:
-```
+
+```text
 Banners publicitários exibidos nas áreas definidas
 ```
 
@@ -83,7 +84,7 @@ Banners publicitários exibidos nas áreas definidas
 ## Parâmetros de consulta
 
 | Parâmetro | Padrão | Descrição |
-|-----------|---------|-------------|
+| ----------- | --------- | ------------- |
 | tipo | '' | Filtra pelo tipo do item (ex.: 21, 22, 23...) |
 | order | random | Ordenação dos resultados (posicao-asc, posicao-desc, random) |
 | produto_id | '' | ID do produto para priorizar banner na página de detalhes |
@@ -99,11 +100,13 @@ Banners publicitários exibidos nas áreas definidas
 ## Erros comuns
 
 ### Erro 1: Não usar `|raw` no banner
+
 **Problema**: O HTML do banner aparece como texto.
 **Diagnóstico**: Tags renderizadas na página.
 **Solução**: Renderizar com `{{ banner.raw|raw }}`.
 
 ### Erro 2: Não validar lista vazia
+
 **Problema**: A área do banner fica vazia.
 **Diagnóstico**: Retorno sem itens.
 **Solução**: Verificar `if bannerTopo|length > 0` antes de renderizar.

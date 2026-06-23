@@ -33,13 +33,8 @@ readListener('nome_do_evento', function(dados) {
 **Parâmetros:**
 
 - `'nome_do_evento'` (string) — Nome do evento a monitorar
+  - Exemplos: `totalItensCarrinho`, `onAddProductCart`
 - `função(dados)` — Callback executado quando o evento dispara
-
-### Retorno
-
-```json
-0
-```
 
 ## Quando usar
 

@@ -43,22 +43,24 @@ Disponibiliza como retorno os dados prontos do Box do Produto na loja virtual. E
 ```twig
 {% set produtosBox = store.productToBox({limit:'4', order:'random'}) %}
 <div class="row">
-	{% for produto in produtosBox.data %}
-	<div class="col-md-3">
-	{{ store.productBoxDefault(produto) }}
-	</div>
-    {% endfor %}
+  {% for produto in produtosBox.data %}
+  <div class="col-md-3">
+  {{ store.productBoxDefault(produto) }}
+  </div>
+  {% endfor %}
 </div>
 ```
 
 Saída esperada:
-```
-Caixas de produtos renderizadas com layout padrão wBuy
+
+```text
+Boxes de produtos renderizadas com layout padrão wBuy
 ```
 
 ## Retorno dos dados
 
 Este método retorna HTML já renderizado com a caixa do produto formatada com:
+
 - Imagem do produto
 - Título
 - Preço
@@ -69,7 +71,7 @@ Este método retorna HTML já renderizado com a caixa do produto formatada com:
 ## Parâmetros de consulta
 
 | Parâmetro | Padrão | Descrição |
-|-----------|---------|-------------|
+| ---------- | --------- | ------------- |
 | total_fotos | 2 | A quantidade total de fotos que deve ser retornado por produto |
 
 ## Observações
@@ -82,11 +84,13 @@ Este método retorna HTML já renderizado com a caixa do produto formatada com:
 ## Erros comuns
 
 ### Erro 1: Passar produto fora do formato esperado
+
 **Problema**: O box quebra ou não renderiza detalhes.
 **Diagnóstico**: Produto não veio de `store.productToBox()`.
 **Solução**: Sempre usar itens de `produtosBox.data` como entrada.
 
 ### Erro 2: Não limitar a quantidade de fotos
+
 **Problema**: Layout desalinhado com muitas imagens.
 **Diagnóstico**: Galerias maiores que o esperado.
 **Solução**: Ajustar `total_fotos` conforme o layout do template.

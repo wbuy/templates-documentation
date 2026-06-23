@@ -71,38 +71,40 @@ Disponibiliza como retorno os banners principais (slides) da loja virtual. Este 
 {% set slides = store.mainBanner() %}
 {% if slides.raw|length >= 1 %}
 <div class="{{ slides.width == 'block' ? 'block' : 'central' }}{{ slogan == '' ? ' mb-0' : '' }}">
-	<div id="slider" class="mb-0 owl-carousel owl-theme">
-		{% for slide in slides.items %}
-		<div class="item">
-			<div class="{{ slide.foto_mobile == '' ? 'block' : 'd-none d-md-block' }}">
-				{{ slide.desktop_raw|raw }}
-			</div>
-			{% if slide.foto_mobile %}
-			<div class="d-block d-md-none">
-				{{ slide.mobile_raw|raw }}
-			</div>
-			{% endif %}
-		</div>
-		{% endfor %}
-	</div>
+   <div id="slider" class="mb-0 owl-carousel owl-theme">
+      {% for slide in slides.items %}
+      <div class="item">
+        <div class="{{ slide.foto_mobile == '' ? 'block' : 'd-none d-md-block' }}">
+          {{ slide.desktop_raw|raw }}
+        </div>
+        {% if slide.foto_mobile %}
+        <div class="d-block d-md-none">
+          {{ slide.mobile_raw|raw }}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+   </div>
 </div>
 {% endif %}
 ```
 
 Saída esperada:
-```
+
+```text
 Carrossel de banners responsivos (desktop/mobile)
 ```
 
 ## Retorno dos dados
 
 **items** - Array de itens (banners/slides)
+
 - `items[x].id` (string) - ID do banner
 - `items[x].titulo` (string) - Título do banner
 - `items[x].foto` (string) - URL da imagem desktop
 - `items[x].foto_mobile` (string) - URL da imagem mobile
 - `items[x].link` (string) - URL do link do banner
-- `items[x].target` (string) - Target do link (_blank, _self, etc)
+- `items[x].target` (string) - Target do link (_blank,_self, etc)
 - `items[x].desktop_raw` (string raw) - Imagem pronta para renderização desktop
 - `items[x].mobile_raw` (string raw) - Imagem pronta para renderização mobile
 - `items[x].avancado` (array) - Opções avançadas (texto, cor de texto, etc)
@@ -110,6 +112,7 @@ Carrossel de banners responsivos (desktop/mobile)
 **items_per_view** - Int indicando quantidade de banners por visualização
 
 **raw** - Array com elementos HTML prontos
+
 - `raw.desktop` - Imagens prontas para desktop
 - `raw.mobile` - Imagens prontas para mobile
 
@@ -118,7 +121,7 @@ Carrossel de banners responsivos (desktop/mobile)
 ## Parâmetros de consulta
 
 | Parâmetro | Padrão | Descrição |
-|-----------|---------|-------------|
+| ---------- | --------- | ------------- |
 | titulo | '' | Filtra pelo título do item |
 
 ## Observações
@@ -131,11 +134,13 @@ Carrossel de banners responsivos (desktop/mobile)
 ## Erros comuns
 
 ### Erro 1: Esquecer `|raw` nos campos preparados
+
 **Problema**: HTML de banner aparece como texto.
 **Diagnóstico**: Tags renderizadas na tela.
 **Solução**: Usar `{{ slide.desktop_raw|raw }}` e `{{ slide.mobile_raw|raw }}`.
 
 ### Erro 2: Renderizar sem validar retorno
+
 **Problema**: Carrossel vazio em lojas sem banners.
 **Diagnóstico**: Estrutura do slider aparece sem itens.
 **Solução**: Verificar `if slides.raw|length >= 1` antes de montar o HTML.
